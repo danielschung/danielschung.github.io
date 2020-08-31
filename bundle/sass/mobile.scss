@@ -44,10 +44,28 @@
 }
 
 @media only screen and (max-width:415px) { // all mobile
-  .wrapper { padding:20px; }
+  html { font-size: 14px; }
+
+  $mobile-main-padding: 37px;
+
+  .wrapper { padding: $mobile-main-padding; }
 
   div.mobile-nav { 
-    
+    right: $mobile-main-padding;
+    top: $mobile-main-padding;
+  }
+
+  header.intro {
+    div.header-text {
+      top: 20vh;
+    }
+
+    div.header-illustration {
+      margin-top: 30vh;
+      height: 272.12px;
+      width: 250px;
+
+    }
   }
 
   div.interest-card div.text-container p.large {

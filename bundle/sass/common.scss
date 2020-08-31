@@ -117,35 +117,11 @@ div.mobile-nav {
 
 // 3. Header ------------------------------
 
-header {
+header.intro {
   @include introHeader;
-
-  div.header-text { 
-    @include header-text;
-
-    h1 {
-      color:$color-white;
-    }
-
-    p.subhead {
-      color:$color-white;
-      margin-top:18px;
-    }
-
-  }
-
-  div.header-illustration {
-    @include illustration;
-    background-image: $header-illustration;
-    border-radius: 0;
-    margin-top: calc(50vh - (600px / 2));
-    float: right;
-    height: 598.67256638px;
-    width: 550px;
-  }
 }
 
-header.about {
+header.page {
   @include pageHeader;
 }
 

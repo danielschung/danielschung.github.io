@@ -208,7 +208,7 @@ $nav-width: 12.625rem; // 202px
   position: fixed;
   right: $main-padding;
   top: $main-padding;
-  width: 44px;
+  width: 24px;
   z-index: 3;
   mix-blend-mode: difference;
 
@@ -216,12 +216,12 @@ $nav-width: 12.625rem; // 202px
     background-color: $color-white;
     border-radius:10px;
     float:right;
-    margin-bottom: 10px;
-    height: 5px;
+    margin-bottom: 7px;
+    height: 2px;
     width: 100%;
   }
 
-  div.line:nth-child(2) {
+  div.line:nth-child(1) {
     width:67%;
   }
 }
@@ -234,6 +234,32 @@ $header-background: $color-dark;
   @include border-box;
   background-color: $header-background;
   height: 100vh;
+
+  div.header-text { 
+    height: 11.5625rem;
+    top: calc(50vh - (11.5625rem / 2) );
+    max-width: 28.125rem; // 450px
+    position: relative;
+
+    h1 {
+      color:$color-white;
+    }
+
+    p.subhead {
+      color:$color-white;
+      margin-top:18px;
+    }
+  }
+
+  div.header-illustration {
+    @include illustration;
+    background-image: $header-illustration;
+    border-radius: 0;
+    margin-top: calc(50vh - (600px / 2));
+    float: right;
+    height: 598.67256638px;
+    width: 550px;
+  }
 }
 
 @mixin pageHeader {
@@ -244,13 +270,6 @@ $header-background: $color-dark;
   h1 {
     color: $color-white;
   }
-}
-
-@mixin header-text {
-  height: 11.5625rem;
-  top: calc(50vh - (11.5625rem / 2) );
-  max-width: 28.125rem; // 450px
-  position: absolute;
 }
 
 // Section
