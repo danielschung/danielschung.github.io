@@ -81,7 +81,7 @@ $freight:'freight', 'garamond', 'sans-serif';
   color: $color-black;
   font-family: $poppins;
   font-size: 1rem; // 16px
-  line-height: 1.5rem; // 24px
+  line-height: 1.625rem; // 26px
 }
 
 @mixin strong {
@@ -101,7 +101,7 @@ $freight:'freight', 'garamond', 'sans-serif';
   color: $color-dark;
   font-family: $poppins;
   font-size: 1rem; //16px
-  line-height: 1.625rem; // 26px
+  line-height: 1.5rem; // 24px
 }
 
 @mixin h1-massive {
