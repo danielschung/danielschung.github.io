@@ -1,0 +1,61 @@
+@import 'global';
+
+@media only screen and (max-width:1024px) { // iPad Pro
+  nav { 
+    right:0;
+    border-left: $nav-border;
+    width:0;
+
+    div.logo {
+      height: 150px; // 100px
+      border-bottom: none;
+    }
+
+    div.links {
+      top: 150px;
+    }
+  }
+  div.mobile-nav { display: block; }
+  .wrapper { width: 100vw }
+}
+
+@media only screen and (max-width:769px) { // iPad normal
+  section.interests h2 { max-width: 100%; }
+
+  div.interest-card {
+    margin-bottom:70px;
+
+    div.design-illustration,
+    div.dev-illustration,
+    div.teams-illustration {
+      display: block;
+      margin:0 auto;
+    }
+
+    div.text-container {
+      display: block;
+      margin: 50px auto 0 auto;
+      max-width: 500px;
+      position: relative;
+      text-align: center;
+    }
+  }
+
+}
+
+@media only screen and (max-width:415px) { // all mobile
+  .wrapper { padding:20px; }
+
+  div.mobile-nav { 
+    
+  }
+
+  div.interest-card div.text-container p.large {
+    @include p;
+  }
+
+  div.interest-card div.text-container p.bottom {
+    @include p-small;
+  }
+
+}

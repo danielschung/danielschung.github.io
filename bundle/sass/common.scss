@@ -1,0 +1,229 @@
+// --- Description: applying variables and mixins and adding custom styles
+// Table of Contents
+//  1. Reset
+//  2. Nav
+//  3. Header
+//  4. Section
+//  5. Footer
+
+@import 'global';
+
+// 1. Reset ------
+
+html, body, div {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: $color-dark;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, p, li, span, a { margin:0; }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@mixin border-box { // makes padding not increase width or height
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;    
+  box-sizing: border-box;         
+}
+
+.wrapper {
+  @include wrapper;
+}
+
+a.open {
+  @include openButton;
+}
+
+a.open:hover {
+  @include hover;
+  border-bottom: 1px solid $color-white;
+}
+
+a.open::after {
+  content: $arrow-icon;
+  margin-left: 0.6875rem // 11px
+}
+
+a.open.black {
+  color: $color-black;
+}
+
+a.open.black:hover {
+  @include hover;
+  border-bottom: 1px solid $color-black;
+}
+
+a.open.black::after {
+  content: $arrow-icon-black;
+}
+
+
+
+.clear {
+  clear: both;
+}
+
+// 2. Nav -----------------------------------------------------
+
+nav {
+  @include Nav;
+
+  div.logo {
+    @include nav-section;
+    border-bottom: $nav-border;
+    height: 6.25rem; // 100px
+    top: 0;
+  }
+
+  div.links {
+    @include nav-section;
+    top: 100px;
+    
+    a {
+      @include nav-link;
+      display: block;
+      margin-bottom: 0.875rem; // 14px
+    }
+
+    a.active { color: $color-white; }
+  }
+
+  div.social {
+    @include nav-section;
+    border-top: $nav-border;
+    bottom: 0;
+
+    div.link { @include nav-social-links; }
+    div.link:nth-child(2) { margin: 0 0.6875rem; /* 11px */ }
+
+  }
+
+}
+
+div.mobile-nav {
+  @include mobile-Nav;
+  display:none;
+}
+
+// 3. Header ------------------------------
+
+header {
+  @include introHeader;
+
+  div.header-text { 
+    @include header-text;
+
+    h1 {
+      color:$color-white;
+    }
+
+    p.subhead {
+      color:$color-white;
+      margin-top:18px;
+    }
+
+  }
+
+  div.header-illustration {
+    @include illustration;
+    background-image: $header-illustration;
+    border-radius: 0;
+    margin-top: calc(50vh - (600px / 2));
+    float: right;
+    height: 598.67256638px;
+    width: 550px;
+  }
+}
+
+header.about {
+  @include pageHeader;
+}
+
+
+
+// 4. Section ----------------------------
+
+section { @include Section; }
+
+section.interests {
+  padding-bottom: 5.75rem; // 92px
+
+  h2 {
+    color: $color-black;
+    margin-top: 22px;
+    margin-bottom: 22px;
+    max-width: 70%;
+
+    em {
+      color: $color-primary;
+      font-style: normal;
+    }
+  }
+}
+
+div.interest-card {
+  @include interest-card;
+
+  div.design-illustration {
+    @include illustration;
+    background-image: $design-illustration;
+  }
+
+  div.dev-illustration {
+    @include illustration;
+    background-image: $dev-illustration;
+    background-size: 105%;
+    background-position: 135% 52px;
+  }
+
+  div.teams-illustration {
+    @include illustration;
+    background-image: $teams-illustration;
+    background-size: 85%;
+    background-position: 43% 23px;
+  }
+}
+
+section.cases {
+  @include Cases;
+}
+
+// 5. Footer -----
+
+footer {
+  @include Footer;
+
+  a.open {
+    color: $color-white;
+  }
+
+  h1 a:hover {
+    @include hover;
+    border-bottom: 1px solid $color-white;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,360 @@
+// --- Description: assign variables and mixins
+// Table of Contents
+//  1. Colors
+//  2. Typography
+//  3. Assets
+//  4. Layout
+//  5. Components
+//  6. Spacing
+
+
+// 1. Colors --------------
+
+$color-primary: #57586B;
+$color-dark: #1D1E2B;
+$color-black: #2B2B2B;
+$color-white: #F6F6F6;
+$color-nav-border: #292A3D;
+
+// 2. Typograhpy ----------------------------------
+
+$poppins: 'poppins', 'helvetica', 'sans';
+$poppins-bold: 'poppins-bold', 'helvetica', 'sans';
+$freight:'freight', 'garamond', 'sans-serif';
+
+@font-face {
+  font-family: 'poppins';
+  src: url(./media/fonts/poppins-light.ttf);
+}
+
+@font-face {
+  font-family: 'poppins-bold';
+  src: url(./media/fonts/poppins-medium.ttf);
+}
+
+@font-face {
+  font-family: 'freight';
+  src: url(./media/fonts/freight.otf);
+}
+
+@mixin h1 {
+  color: $color-black;
+  font-family: $freight;
+  font-size: 2.9375rem; // 47px
+  line-height: 3.25rem; // 52px
+}
+
+@mixin h2 {
+  color: $color-black;
+  font-family: $freight;
+  font-size: 2.0625rem; // 33px
+  line-height: 2.625rem; // 42px
+}
+
+@mixin h3 {
+  color: $color-black;
+  font-family: $freight;
+  font-size: 1.6875rem; // 27px
+  line-height: 2.1875rem; // 35px
+}
+
+@mixin subhead {
+  color: $color-black;
+  font-family: $poppins-bold;
+  font-size: 1.25rem; // 20px
+  line-height: 2rem; // 32px
+  letter-spacing: 0.01875rem; // 0.3px
+}
+
+@mixin p-large {
+  @include subhead;
+  font-family: $poppins;
+}
+
+@mixin p-small {
+  color: $color-black;
+  font-family: $poppins;
+  font-size: 0.75rem; // 12px
+  line-height: 1.125rem; // 18px
+}
+
+@mixin p {
+  color: $color-black;
+  font-family: $poppins;
+  font-size: 1rem; // 16px
+  line-height: 1.5rem; // 24px
+}
+
+@mixin strong {
+  font-family: $poppins-bold;
+}
+
+@mixin nav-link {
+  color: $color-primary;
+  font-family: $poppins-bold;
+  font-size: 0.9375rem; //15px
+  line-height: 1.4375rem; // 23px
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+@mixin button-text {
+  color: $color-dark;
+  font-family: $poppins;
+  font-size: 1rem; //16px
+  line-height: 1.5rem; // 24px
+}
+
+@mixin h1-massive {
+  @include h1;
+  display: inline-block;
+  font-size: 12.5rem; // 200px
+  line-height: 7.8125rem; // 125px;
+  position:absolute;
+  top:22%;
+  text-align: center;
+  width: 10.5625rem; // 169px
+}
+
+h1 { @include h1; }
+h2 { @include h2; }
+h3 { @include h3; }
+p { @include p; }
+strong { @include strong; }
+.subhead { @include subhead; }
+.large { @include p-large; }
+.small { @include p-small; }
+
+// 3. Assets ------------------------------------------
+
+$header-illustration: url('./media/images/header.png');
+$design-illustration: url('./media/images/design.png');
+$dev-illustration: url('./media/images/dev.png');
+$teams-illustration: url('./media/images/teams.png');
+$arrow-icon: url('./media/images/arrow.svg');
+$arrow-icon-black: url('./media/images/arrow-black.svg');
+
+@mixin illustration {
+  background-color: $color-dark;
+  background-repeat: no-repeat, repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius:200px;
+  display:inline-block;
+  height:250px;
+  width:250px;
+}
+
+// 4. Layout -------------------------
+
+$main-padding: 4.375rem; // 70px
+
+@mixin wrapper {
+  @include border-box;
+  padding: $main-padding;
+  float:right;
+  width: calc( 100vw - #{$nav-width} );
+}
+
+// 5. Components ------------------------------
+
+// hover 
+
+@mixin hover {
+  -o-transition: all .1s ease-in-out;
+  -ms-transition: all .1s ease-in-out;
+  -moz-transition: all .1s ease-in-out;
+  -webkit-transition: all .1s ease-in-out;
+}
+
+
+// Nav
+
+$nav-border: 1px solid $color-nav-border;
+$nav-padding: 1.9375rem 1.4375rem; //31px, 23px
+$nav-width: 12.625rem; // 202px
+
+@mixin Nav {
+  background-color: $color-dark;
+  border-right: $nav-border;
+  height: 100vh;
+  position: fixed;
+  width: $nav-width;
+  z-index: 1;
+}
+
+@mixin nav-section {
+  @include border-box;
+  padding: $nav-padding;
+  position: absolute;
+  width: 100%;
+}
+
+@mixin nav-social-links {
+  background-color:$color-white;
+  border-radius: 100px;
+  display:inline-block;
+  height: 1.125rem; // 18px
+  width: 1.125rem; // 18px
+
+  div.link:nth-child(2) {
+    margin: 0 0.6875rem; // 11px
+  }
+}
+
+// Mobile Nav
+
+@mixin mobile-Nav {
+  position: fixed;
+  right: $main-padding;
+  top: $main-padding;
+  width: 44px;
+  z-index: 3;
+  mix-blend-mode: difference;
+
+  div.line {
+    background-color: $color-white;
+    border-radius:10px;
+    float:right;
+    margin-bottom: 10px;
+    height: 5px;
+    width: 100%;
+  }
+
+  div.line:nth-child(2) {
+    width:67%;
+  }
+}
+
+// Header
+
+$header-background: $color-dark;
+
+@mixin introHeader {
+  @include border-box;
+  background-color: $header-background;
+  height: 100vh;
+}
+
+@mixin pageHeader {
+  @include border-box;
+  height:15.75rem; // 252px
+  padding: 8.9375rem 4.375rem 3.5625rem 4.375rem; // 143px 70px 57px 70px 
+
+  h1 {
+    color: $color-white;
+  }
+}
+
+@mixin header-text {
+  height: 11.5625rem;
+  top: calc(50vh - (11.5625rem / 2) );
+  max-width: 28.125rem; // 450px
+  position: absolute;
+}
+
+// Section
+
+@mixin Section {
+  @include border-box;
+  background-color: $color-white;
+  margin-bottom: 10px;
+}
+
+$case-section-padding: 6.25rem; // 100px
+
+@mixin Cases {
+  padding: 0 $case-section-padding 10.5rem /* 168px */ $case-section-padding;
+
+  h1.massive {
+    @include h1-massive;
+
+  }
+
+  .case-card {
+    margin-top: 10.5rem; // 168px
+    position: relative;
+
+    .text-container {
+      display: inline-block;
+      max-width: 39rem; // 624px
+      margin-left: 260px;
+
+      h2 {
+        color: $color-primary;
+        margin-bottom: 1.0625rem // 17px
+      }
+
+      p.subhead {
+        margin-bottom: 0.4375rem; // 7px
+      }
+
+      p.large {
+        margin-bottom: 1.875rem; // 30px
+      }
+    }
+  }
+
+}
+
+@mixin interest-card {
+  margin-top: 93px;
+  position:relative;
+
+  div.text-container {
+    max-width: 750px;
+    display: inline-block;
+    margin-left: 50px;
+    top: 18%;
+    position: absolute;
+
+    p.subhead { 
+      color: $color-dark;
+      margin-bottom: 10px;
+    }
+
+    p.bottom {
+      margin-top: 21px;
+    }
+
+  }
+}
+
+// Button
+
+@mixin openButton {
+  @include border-box;
+  @include button-text;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+  color: $color-white;
+  outline:none;
+  padding:0;
+}
+
+// Footer
+
+@mixin Footer {
+  @include border-box;
+  height:26.6875rem; // 427px
+  padding-top: 5.6875rem !important; // 91px
+  position:relative;
+
+  h1 {
+    color: $color-white;
+    margin-top: 1.125rem; // 18px
+
+    a {
+      border-bottom: 1px solid transparent;
+    }
+  }
+}
+
+
+
+
+
+
+
+
