@@ -15,12 +15,27 @@
       top: 150px;
     }
   }
+
   div.mobile-nav { display: block; }
   .wrapper { width: 100vw }
+
+  header.intro {
+    div.header-text {
+      top: 17vh;
+    }
+  }
 }
 
 @media only screen and (max-width:769px) { // iPad normal
   section.interests h2 { max-width: 100%; }
+
+  header.intro {
+    div.header-illustration {
+      margin-top: 10vh;
+      // height: 272.12px;
+      // width: 250px;
+    }
+  }
 
   div.interest-card {
     margin-bottom:70px;
@@ -29,15 +44,27 @@
     div.dev-illustration,
     div.teams-illustration {
       display: block;
-      margin:0 auto;
     }
 
     div.text-container {
       display: block;
-      margin: 50px auto 0 auto;
+      margin: 50px 0 0 0;
       max-width: 500px;
       position: relative;
-      text-align: center;
+    }
+
+    div.interest-card {
+      div.text-container {
+        text-align: left;
+
+        p.large {
+          @include p;
+        }
+
+        p.bottom {
+          @include p-small;
+        }
+      }
     }
   }
 
@@ -56,24 +83,12 @@
   }
 
   header.intro {
-    div.header-text {
-      top: 20vh;
-    }
-
     div.header-illustration {
       margin-top: 30vh;
       height: 272.12px;
       width: 250px;
 
     }
-  }
-
-  div.interest-card div.text-container p.large {
-    @include p;
-  }
-
-  div.interest-card div.text-container p.bottom {
-    @include p-small;
   }
 
 }
