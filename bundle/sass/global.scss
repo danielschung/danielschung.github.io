@@ -279,6 +279,28 @@ $header-background: $color-dark;
   margin-bottom: 10px;
 }
 
+@mixin interest-card {
+  margin-top: 93px;
+  position:relative;
+
+  div.text-container {
+    max-width: 750px;
+    display: inline-block;
+    margin-left: 50px;
+    top: 18%;
+    position: absolute;
+
+    h3 { 
+      color: $color-primary;
+      margin-bottom: 10px;
+    }
+
+    p.bottom {
+      margin-top: 21px;
+    }
+  }
+}
+
 $case-section-padding: 6.25rem; // 100px
 
 @mixin Cases {
@@ -286,7 +308,6 @@ $case-section-padding: 6.25rem; // 100px
 
   h1.massive {
     @include h1-massive;
-
   }
 
   .case-card {
@@ -313,28 +334,6 @@ $case-section-padding: 6.25rem; // 100px
     }
   }
 
-}
-
-@mixin interest-card {
-  margin-top: 93px;
-  position:relative;
-
-  div.text-container {
-    max-width: 750px;
-    display: inline-block;
-    margin-left: 50px;
-    top: 18%;
-    position: absolute;
-
-    h3 { 
-      color: $color-primary;
-      margin-bottom: 10px;
-    }
-
-    p.bottom {
-      margin-top: 21px;
-    }
-  }
 }
 
 // Button

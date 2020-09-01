@@ -68,6 +68,21 @@
     }
   }
 
+  section.cases {
+    div.case-card {
+      h1.massive {
+        display: block;
+        position: relative;
+        text-align: left;
+      }
+
+      div.text-container {
+        display: block;
+        margin-left: 0;
+        margin-top:50px;
+      }
+    }
+  }
 }
 
 @media only screen and (max-width:415px) { // all mobile
@@ -75,7 +90,13 @@
 
   $mobile-main-padding: 37px;
 
-  .wrapper { padding: $mobile-main-padding; }
+  .wrapper {
+    padding: $mobile-main-padding;
+  }
+
+  header.page { 
+    padding: 8.9375rem $mobile-main-padding 3.5625rem $mobile-main-padding;
+  }
 
   div.mobile-nav { 
     right: $mobile-main-padding;
@@ -89,6 +110,10 @@
       width: 250px;
 
     }
+  }
+
+  section.cases {
+    padding: 0 $mobile-main-padding 10.5rem /* 168px */ $mobile-main-padding;
   }
 
 }
