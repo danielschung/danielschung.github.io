@@ -5,7 +5,6 @@
 //  3. Assets
 //  4. Layout
 //  5. Components
-//  6. Spacing
 
 
 // 1. Colors --------------
@@ -303,7 +302,7 @@ $header-background: $color-dark;
 
 $case-section-padding: 6.25rem; // 100px
 
-@mixin Cases {
+@mixin cases {
   padding: 0 $case-section-padding 10.5rem /* 168px */ $case-section-padding;
 
   h1.massive {
@@ -333,7 +332,17 @@ $case-section-padding: 6.25rem; // 100px
       }
     }
   }
+}
 
+@mixin about {
+  h2 {
+    color: $color-primary;
+    margin-bottom: 1.875rem // 30px
+  }
+
+  p {
+    margin-bottom: 1.25rem; // 20px
+  }
 }
 
 // Button

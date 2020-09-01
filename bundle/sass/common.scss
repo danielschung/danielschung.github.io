@@ -21,6 +21,7 @@ html {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering:optimizeLegibility !important;
 }
 
 h1, h2, h3, h4, h5, p, li, span, a { margin:0; }
@@ -143,6 +144,7 @@ section.interests {
     em {
       color: $color-primary;
       font-style: normal;
+      letter-spacing:inherit;
     }
   }
 }
@@ -171,7 +173,11 @@ div.interest-card {
 }
 
 section.cases {
-  @include Cases;
+  @include cases;
+}
+
+section.about {
+  @include about;
 }
 
 // 5. Footer -----
