@@ -8,17 +8,20 @@ $( document ).ready(function() {
 //  1. Mobile Nav
     
 $('div.mobile-nav').click( function() {
-  $('div.links a').hide();
   $('div.links a').fadeIn(1000);
-  $('nav').animate({width:'202px'},200,'swing');
-
+  $('nav').animate({width:'252px'},200,'swing');
   $('div.mobile-nav div.line:nth-child(1)').animate({width:'100%'},200,'swing');
+  $('div.mobile-nav div.close').show();
 
-  // click wrapper to make nav leave
-  $('.wrapper').one('click', function() {
+  // click wrapper or hamburger to make nav leave
+  $('.wrapper, div.close').one('click', function(event) {
+    event.stopPropagation();
     $('nav').animate({width:'0px'},200,'swing');
     $('div.mobile-nav div.line:nth-child(1)').animate({width:'67%'},200,'swing');
+    $('div.links a').fadeOut();
+    $('div.mobile-nav div.close').hide();
   });
+
 });
 
 //  2. Animations

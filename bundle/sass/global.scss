@@ -96,6 +96,11 @@ $freight:'freight', 'garamond', 'sans-serif';
   text-decoration: none;
 }
 
+@mixin nav-link-mobile {
+    font-size: 1.25rem; // 20px
+    line-height: 2rem; // 32px
+}
+
 @mixin button-text {
   color: $color-dark;
   font-family: $poppins;
@@ -202,11 +207,13 @@ $nav-width: 12.625rem; // 202px
 
 // Mobile Nav
 
+$mobile-nav-width: 24px;
+
 @mixin mobile-Nav {
   position: fixed;
   right: $main-padding;
   top: $main-padding;
-  width: 24px;
+  width: $mobile-nav-width;
   z-index: 3;
   mix-blend-mode: difference;
 
@@ -221,6 +228,14 @@ $nav-width: 12.625rem; // 202px
 
   div.line:nth-child(1) {
     width:67%;
+  }
+
+  div.close {
+    display:none;
+    height: $mobile-nav-width;
+    position:relative;
+    top:-7px;
+    width: $mobile-nav-width;
   }
 }
 

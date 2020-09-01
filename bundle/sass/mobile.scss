@@ -13,6 +13,10 @@
 
     div.links {
       top: 150px;
+
+      a {
+        @include nav-link-mobile;
+      }
     }
   }
 
