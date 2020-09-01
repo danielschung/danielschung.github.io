@@ -23,17 +23,17 @@ $freight:'freight', 'garamond', 'sans-serif';
 
 @font-face {
   font-family: 'poppins';
-  src: url(./media/fonts/poppins-light.ttf);
+  src: url(./media/fonts/poppins-light.ttf) format('truetype');
 }
 
 @font-face {
   font-family: 'poppins-bold';
-  src: url(./media/fonts/poppins-medium.ttf);
+  src: url(./media/fonts/poppins-medium.ttf) format('truetype');
 }
 
 @font-face {
   font-family: 'freight';
-  src: url(./media/fonts/freight.otf);
+  src: url(./media/fonts/freight.otf) format('opentype');
 }
 
 @mixin h1 {
