@@ -276,10 +276,14 @@ $header-background: $color-dark;
   @include border-box;
   background-color: $color-white;
   margin-bottom: 10px;
+
+  span {
+    color: $color-primary;
+  }
 }
 
 @mixin interest-card {
-  margin-top: 93px;
+  margin-top: 7.375rem; // 118px
   position:relative;
 
   div.text-container {

@@ -21,7 +21,11 @@
 
   header.intro {
     div.header-text {
-      top: 17vh;
+      top: 10vh;
+    }
+
+    div.header-illustration {
+      margin-top: 20vh;
     }
   }
 }
@@ -31,7 +35,7 @@
 
   header.intro {
     div.header-illustration {
-      margin-top: 10vh;
+      margin-top: 5vh;
       // height: 272.12px;
       // width: 250px;
     }
@@ -44,12 +48,13 @@
     div.dev-illustration,
     div.teams-illustration {
       display: block;
+      margin: 0 auto;
     }
 
     div.text-container {
       display: block;
       margin: 50px 0 0 0;
-      max-width: 500px;
+      // max-width: 500px;
       position: relative;
     }
 
@@ -104,8 +109,10 @@
   }
 
   header.intro {
+    height: calc(100vh - 4.3125rem); // 69px
+
     div.header-illustration {
-      margin-top: 30vh;
+      margin-top: 28vh;
       height: 272.12px;
       width: 250px;
 
