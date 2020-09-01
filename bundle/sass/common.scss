@@ -24,6 +24,7 @@ html {
 h1, h2, h3, h4, h5, p, li, span, a, em, strong { 
   margin:0;
   font-kerning: normal;
+  letter-spacing: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering:optimizeLegibility !important; 
