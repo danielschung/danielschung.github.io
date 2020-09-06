@@ -12,7 +12,8 @@
 $color-primary: #57586B;
 $color-dark: #1D1E2B;
 $color-black: #2B2B2B;
-$color-white: #F6F6F6;
+$color-off-white: #F6F6F6;
+$color-white: #FFFFFF;
 $color-nav-border: #292A3D;
 
 // 2. Typograhpy ----------------------------------
@@ -119,6 +120,11 @@ $freight:'freight', 'garamond', 'sans-serif';
   width: 10.5625rem; // 169px
 }
 
+@mixin small-header {
+  @include p;
+  line-height: 1.5rem; // 24px
+}
+
 h1 { @include h1; }
 h2 { @include h2; }
 h3 { @include h3; }
@@ -127,19 +133,21 @@ strong { @include strong; }
 .subhead { @include subhead; }
 .large { @include p-large; }
 .small { @include p-small; }
+.small-header { @include button-text; }
 
 // 3. Assets ------------------------------------------
 
-$header-illustration: url('./media/images/header.png');
-$design-illustration: url('./media/images/design.png');
-$dev-illustration: url('./media/images/dev.png');
-$teams-illustration: url('./media/images/teams.png');
+$header-illustration: url('./media/images/illustration-header.png');
+$design-illustration: url('./media/images/illustration-design.png');
+$dev-illustration: url('./media/images/illustration-dev.png');
+$teams-illustration: url('./media/images/illustration-teams.png');
 $arrow-icon: url('./media/images/arrow.svg');
 $arrow-icon-black: url('./media/images/arrow-black.svg');
+$meet-simplete-hero: url('./media/images/meet-simplete-hero.png');
 
 @mixin illustration {
   background-color: $color-dark;
-  background-repeat: no-repeat, repeat;
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   border-radius:200px;
@@ -147,6 +155,30 @@ $arrow-icon-black: url('./media/images/arrow-black.svg');
   height:250px;
   width:250px;
 }
+
+@mixin drop-shadow {
+  -webkit-box-shadow: 7px 7px 27px 7px rgba(210,210,210,1);
+  -moz-box-shadow: 7px 7px 27px 7px rgba(210,210,210,1);
+  box-shadow: 7px 7px 27px 7px rgba(210,210,210,1);
+}
+
+@mixin image {
+  @include drop-shadow;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display:inline-block;
+  height:0;
+  width:100%;
+}
+
+@mixin desktop {
+  @include image;
+  border-radius: 0.6875rem; // 11px
+  margin-bottom: 8.5625rem; // 137px
+}
+
+.desktop { @include desktop; }
 
 // 4. Layout -------------------------
 
@@ -171,7 +203,7 @@ $main-padding: 4.375rem; // 70px
 }
 
 
-// Nav
+// navigation
 
 $nav-border: 1px solid $color-nav-border;
 $nav-padding: 1.9375rem 1.4375rem; //31px, 23px
@@ -194,7 +226,7 @@ $nav-width: 12.625rem; // 202px
 }
 
 @mixin nav-social-links {
-  background-color:$color-white;
+  background-color:$color-off-white;
   border-radius: 100px;
   display:inline-block;
   height: 1.125rem; // 18px
@@ -218,7 +250,7 @@ $mobile-nav-width: 24px;
   mix-blend-mode: difference;
 
   div.line {
-    background-color: $color-white;
+    background-color: $color-off-white;
     border-radius:10px;
     float:right;
     margin-bottom: 7px;
@@ -255,11 +287,11 @@ $header-background: $color-dark;
     position: relative;
 
     h1 {
-      color:$color-white;
+      color:$color-off-white;
     }
 
     p.subhead {
-      color:$color-white;
+      color:$color-off-white;
       margin-top:18px;
     }
   }
@@ -281,7 +313,36 @@ $header-background: $color-dark;
   padding: 8.9375rem 4.375rem 3.5625rem 4.375rem; // 143px 70px 57px 70px 
 
   h1 {
-    color: $color-white;
+    color: $color-off-white;
+  }
+}
+
+@mixin caseHeader {
+  @include border-box;
+  background-color: $color-white;
+  padding-top: 6.6875rem; // 107px
+
+  p.small-header {
+    margin-bottom: 1.1875rem; // 19px
+  }
+
+  h1 {
+    color: $color-primary;
+    margin-bottom: 1.1875rem; // 19px
+  }
+
+  p.subhead {
+    margin-bottom: 0.4375rem; // 7px
+  }
+
+  p.large {
+    margin-bottom: 5.484375rem; // 87.75px
+  }
+
+  div.line {
+    background-color: $color-primary;
+    height: 2px;
+    width: 2.296875rem; // 36.75px
   }
 }
 
@@ -321,7 +382,7 @@ $header-background: $color-dark;
 
 $case-section-padding: 6.25rem; // 100px
 
-@mixin cases {
+@mixin cases { // page displaying all cases
   padding: 0 $case-section-padding 10.5rem /* 168px */ $case-section-padding;
 
   h1.massive {
@@ -353,6 +414,31 @@ $case-section-padding: 6.25rem; // 100px
   }
 }
 
+@mixin case { // individual case pages
+  padding-top: 1.4375rem; // 23px
+
+  div.text-container {
+    margin-bottom: 5.8125rem; // 93px
+
+    h2 {
+      color: $color-primary;
+      margin-bottom: 1rem; // 16px
+    }
+
+    p {
+      margin-bottom: 0.875rem; // 14px
+    }
+
+    p.subhead {
+      margin-top: 4.5625rem; // 73px
+    }
+  }
+
+  video {
+    width:100%;
+  }
+}
+
 @mixin about {
   h2 {
     color: $color-primary;
@@ -364,6 +450,8 @@ $case-section-padding: 6.25rem; // 100px
   }
 }
 
+
+
 // Button
 
 @mixin openButton {
@@ -372,7 +460,7 @@ $case-section-padding: 6.25rem; // 100px
   border: none;
   background-color: transparent;
   border-bottom: 1px solid transparent;
-  color: $color-white;
+  color: $color-off-white;
   outline:none;
   padding:0;
 }
@@ -386,7 +474,7 @@ $case-section-padding: 6.25rem; // 100px
   position:relative;
 
   h1 {
-    color: $color-white;
+    color: $color-off-white;
     margin-top: 1.125rem; // 18px
 
     a {

@@ -72,8 +72,6 @@ a.open.black::after {
   content: $arrow-icon-black;
 }
 
-
-
 .clear {
   clear: both;
 }
@@ -130,6 +128,9 @@ header.page {
   @include pageHeader;
 }
 
+header.case {
+  @include caseHeader;
+}
 
 
 // 4. Section ----------------------------
@@ -144,12 +145,6 @@ section.interests {
     margin-top: 22px;
     margin-bottom: 22px;
     max-width: 70%;
-
-    em {
-      color: $color-primary;
-      font-style: normal;
-      letter-spacing:inherit;
-    }
   }
 }
 
@@ -178,6 +173,15 @@ div.interest-card {
 
 section.cases {
   @include cases;
+}
+
+section.case {
+  @include case;
+
+  .meet-simplete-hero {
+    background-image: $meet-simplete-hero;
+    padding-top: 49.833887%; // image height / image width * 100
+  }
 }
 
 section.about {
