@@ -19,6 +19,7 @@ html, body, div {
 html {
   background-color: $color-dark;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 h1, h2, h3, h4, h5, p, li, span, a, em, strong { 
@@ -214,7 +215,7 @@ footer {
 
   h1 a:hover {
     @include hover;
-    border-bottom: 1px solid $color-white;
+    border-bottom: 2px solid $color-white;
   }
 }
 

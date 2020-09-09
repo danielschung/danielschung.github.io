@@ -349,7 +349,6 @@ $header-background: $color-dark;
     @include illustration;
     background-image: $header-illustration;
     border-radius: 0;
-    margin-top: calc(50vh - (600px / 2));
     float: right;
     height: 598.67256638px;
     width: 550px;
@@ -572,7 +571,7 @@ $case-section-padding: 6.25rem; // 100px
     margin-top: 1.125rem; // 18px
 
     a {
-      border-bottom: 1px solid transparent;
+      border-bottom: 2px solid transparent;
     }
   }
 }
