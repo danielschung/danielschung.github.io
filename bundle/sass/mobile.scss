@@ -98,7 +98,11 @@
     div.text-container {
       .left, .right {
         float:none;
-        max-width:100%;
+        width:100%;
+      }
+
+      .stats {
+        margin-top: 2rem;
       }
     }
   }

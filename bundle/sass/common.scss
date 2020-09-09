@@ -72,6 +72,26 @@ a.open.black::after {
   content: $arrow-icon-black;
 }
 
+button:focus {
+  outline: none;
+}
+
+button.white {
+  @include whiteButton;
+}
+
+button.white:hover {
+  @include hover;
+  border: 1px solid $color-white;
+  background-color: $color-primary;
+  color: $color-white;
+}
+
+button.white:active {
+  border: 1px solid $color-dark;
+  background-color: $color-dark;
+}
+
 .clear {
   clear: both;
 }
@@ -177,11 +197,6 @@ section.cases {
 
 section.case {
   @include case;
-
-  .meet-simplete-hero {
-    background-image: $meet-simplete-hero;
-    padding-top: 49.833887%; // image height / image width * 100
-  }
 }
 
 section.about {

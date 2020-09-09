@@ -135,6 +135,7 @@ strong { @include strong; }
 .large { @include p-large; }
 .small { @include p-small; }
 .small-header { @include button-text; }
+.number { @include h1; }
 
 // 3. Assets ------------------------------------------
 
@@ -145,6 +146,8 @@ $teams-illustration: url('./media/images/illustration-teams.png');
 $arrow-icon: url('./media/images/arrow.svg');
 $arrow-icon-black: url('./media/images/arrow-black.svg');
 $meet-simplete-hero: url('./media/images/meet-simplete-hero.png');
+$meet-simplete-mobile: url('./media/images/meet-simplete-mobile.png');
+$meet-simplete-tablet: url('./media/images/meet-simplete-tablet.png');
 
 @mixin illustration {
   background-color: $color-dark;
@@ -163,23 +166,68 @@ $meet-simplete-hero: url('./media/images/meet-simplete-hero.png');
   box-shadow: 7px 7px 27px 7px rgba(210,210,210,1);
 }
 
-@mixin image {
+@mixin screen {
   @include drop-shadow;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  border-radius: 0.6875rem; // 11px
   display:inline-block;
   height:0;
+  margin-bottom: 8.5625rem; // 137px
   width:100%;
 }
 
-@mixin desktop {
-  @include image;
-  border-radius: 0.6875rem; // 11px
-  margin-bottom: 8.5625rem; // 137px
+@mixin tablet {
+  @include screen;
+  background-size:contain;
+  width: 55%;
 }
 
-.desktop { @include desktop; }
+@mixin mobile {
+  @include screen;
+  background-size:contain;
+  position:absolute;
+  width: 25%;
+}
+
+.screen, .tablet, .mobile { 
+  @include screen;
+  position: relative;
+  margin-right: 50px;
+  p {
+    position: absolute;
+    top: -2.5rem; // -40px
+    left: 1rem;
+  }
+}
+
+.tablet { @include tablet; }
+.mobile { @include mobile; }
+
+div.meet-simplete-hero {
+  background-image: $meet-simplete-hero;
+  padding-top: 49.833887%; // image height / image width * 100
+}
+
+div.meet-simplete-tablet {
+  background-image: $meet-simplete-tablet;
+  // padding-top: 66.7%;
+  padding-top: 73.3%;
+}
+
+div.meet-simplete-mobile {
+  background-image: $meet-simplete-mobile;
+  // padding-top: 43.5%;
+  padding-top: 54.3%;
+}
+
+div.meet-simplete-video {
+  @include screen;
+  @include drop-shadow;
+  background-image: url("./media/images/meet-simplete-video.mov");
+  height:600px;
+}
 
 // 4. Layout -------------------------
 
@@ -435,19 +483,37 @@ $case-section-padding: 6.25rem; // 100px
     }
 
     .left {
+      @include border-box;
       float:left;
       margin-right: 4%;
-      max-width: 48%;
+      width: 48%;
     }
 
     .right {
+      @include border-box;
       float:right;
-      max-width: 48%;
+      width: 48%;
     }
 
     div.stats {
       border-left: 1px solid $color-border;
+      padding-left: 2.71875rem; // 43.5px
+
+      div.row {
+        p.number {
+          min-width: 8.9375rem; // 143px
+        }
+        p {
+          display: inline-block;
+        }
+      }
     }
+  }
+
+  div.multiple-screens {
+    position:relative;
+    margin-top:10rem;
+    width:100%;
   }
 
   video {
@@ -456,7 +522,7 @@ $case-section-padding: 6.25rem; // 100px
     width:100%;
   }
   video:focus {
-    outline:none;
+    // outline:none;
   }
 }
 
@@ -482,6 +548,15 @@ $case-section-padding: 6.25rem; // 100px
   color: $color-off-white;
   outline:none;
   padding:0;
+}
+
+@mixin whiteButton {
+  @include border-box;
+  @include button-text;
+  background-color: $color-white;
+  border: 1px solid $color-primary;
+  border-radius: 4px;
+  padding: 0.875rem 1.75rem; // 14px 28px
 }
 
 // Footer

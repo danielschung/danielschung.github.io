@@ -2,10 +2,11 @@
 // Table of Contents
 //  1. Mobile Nav
 //  2. Animations
+//  3. Video
 
 $( document ).ready(function() {
 
-//  1. Mobile Nav
+//  1. Mobile Nav -----
     
 $('div.mobile-nav').click( function() {
   $('div.links a').fadeIn(1000);
@@ -24,7 +25,7 @@ $('div.mobile-nav').click( function() {
 
 });
 
-//  2. Animations
+//  2. Animations -----
 
 // function fades() {
 //   $('div.header-text').hide();
@@ -32,6 +33,14 @@ $('div.mobile-nav').click( function() {
 // }
 
 // fades();
+
+//  3. Video -----
+
+$('video').focus( function() {
+  $(this).play();
+})
+
+
 
 });
 
