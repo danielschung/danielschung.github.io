@@ -41,8 +41,6 @@
   header.intro {
     div.header-illustration {
       margin-top: 5vh;
-      // height: 272.12px;
-      // width: 250px;
     }
   }
 
@@ -127,8 +125,12 @@
   }
 
   header.intro {
+    div.header-text {
+      top: 5.5vh;
+    }
+
     div.header-illustration {
-      margin-top: 20vh;
+      margin-top: 18vh;
       height: 272.12px;
       width: 250px;
 
