@@ -15,6 +15,7 @@ $color-black: #2B2B2B;
 $color-off-white: #F6F6F6;
 $color-white: #FFFFFF;
 $color-nav-border: #292A3D;
+$color-border: #E3E3E3;
 
 // 2. Typograhpy ----------------------------------
 
@@ -432,10 +433,30 @@ $case-section-padding: 6.25rem; // 100px
     p.subhead {
       margin-top: 4.5625rem; // 73px
     }
+
+    .left {
+      float:left;
+      margin-right: 4%;
+      max-width: 48%;
+    }
+
+    .right {
+      float:right;
+      max-width: 48%;
+    }
+
+    div.stats {
+      border-left: 1px solid $color-border;
+    }
   }
 
   video {
+    border-radius: 0.6875rem; // 11px
+    margin-bottom: 8.5625rem; // 137px
     width:100%;
+  }
+  video:focus {
+    outline:none;
   }
 }
 
@@ -449,8 +470,6 @@ $case-section-padding: 6.25rem; // 100px
     margin-bottom: 1.25rem; // 20px
   }
 }
-
-
 
 // Button
 
