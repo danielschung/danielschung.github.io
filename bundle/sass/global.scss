@@ -194,12 +194,14 @@ $meet-simplete-tablet: url('./media/images/meet-simplete-tablet.png');
 .screen, .tablet, .mobile { 
   @include screen;
   position: relative;
-  margin-right: 50px;
   p {
     position: absolute;
     top: -2.5rem; // -40px
-    left: 1rem;
   }
+}
+
+.tablet, .mobile {
+  margin-right: 50px;
 }
 
 .tablet { @include tablet; }
@@ -256,7 +258,7 @@ $main-padding: 4.375rem; // 70px
 
 $nav-border: 1px solid $color-nav-border;
 $nav-padding: 1.9375rem 1.4375rem; //31px, 23px
-$nav-width: 12.625rem; // 202px
+$nav-width: 15.625rem; // 202px
 
 @mixin Nav {
   background-color: $color-dark;
