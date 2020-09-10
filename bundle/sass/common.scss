@@ -193,8 +193,8 @@ div.interest-card {
   div.dev-illustration {
     @include illustration;
     background-image: $dev-illustration;
-    background-size: 105%;
-    background-position: 135% 52px;
+    background-size: 100%;
+    background-position: 135% 27px;
   }
 
   div.teams-illustration {
