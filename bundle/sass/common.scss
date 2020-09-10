@@ -4,7 +4,8 @@
 //  2. Nav
 //  3. Header
 //  4. Section
-//  5. Footer
+//  5. Aside
+//  6. Footer
 
 @import 'global';
 
@@ -103,6 +104,10 @@ button.white:active {
 
 .clear {
   clear: both;
+}
+
+div.persona::after {
+  content: $persona-icon;
 }
 
 // 2. Nav -----------------------------------------------------
@@ -206,13 +211,24 @@ section.cases {
 
 section.case {
   @include case;
+  margin: 0;
+}
+
+div.container {
+
 }
 
 section.about {
   @include about;
 }
 
-// 5. Footer -----
+// 5. Aside -----
+
+aside {
+  @include Aside;
+}
+
+// 6. Footer -----
 
 footer {
   @include Footer;

@@ -6,7 +6,6 @@
 //  4. Layout
 //  5. Components
 
-
 // 1. Colors --------------
 
 $color-primary: #57586B;
@@ -16,12 +15,14 @@ $color-off-white: #F6F6F6;
 $color-white: #FFFFFF;
 $color-nav-border: #292A3D;
 $color-border: #E3E3E3;
+$color-grey: #F7FAFB;
 
 // 2. Typograhpy ----------------------------------
 
 $poppins: 'poppins', 'helvetica', 'sans';
 $poppins-bold: 'poppins-bold', 'helvetica', 'sans';
 $freight:'freight', 'garamond', 'sans-serif';
+$lora-italic: 'lora-italic', 'sans-serif';
 
 @font-face {
   font-family: 'poppins';
@@ -36,6 +37,11 @@ $freight:'freight', 'garamond', 'sans-serif';
 @font-face {
   font-family: 'freight';
   src: url(./media/fonts/freight.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'lora-italic';
+  src: url(./media/fonts/lora-italic.ttf) format('truetype');
 }
 
 @mixin h1 {
@@ -89,6 +95,13 @@ $freight:'freight', 'garamond', 'sans-serif';
   font-family: $poppins-bold;
 }
 
+@mixin p-note {
+  color: $color-black;
+  font-family: $lora-italic;
+  font-size: 0.9375rem; // 15px
+  line-height: 1.4375rem; // 23px
+}
+
 @mixin nav-link {
   color: $color-primary;
   font-family: $poppins-bold;
@@ -136,6 +149,7 @@ strong { @include strong; }
 .small { @include p-small; }
 .small-header { @include button-text; }
 .number { @include h1; }
+.note { @include p-note; }
 
 // 3. Assets ------------------------------------------
 
@@ -143,11 +157,22 @@ $header-illustration: url('./media/images/illustration-header.png');
 $design-illustration: url('./media/images/illustration-design.png');
 $dev-illustration: url('./media/images/illustration-dev.png');
 $teams-illustration: url('./media/images/illustration-teams.png');
-$arrow-icon: url('./media/images/arrow.svg');
-$arrow-icon-black: url('./media/images/arrow-black.svg');
 $meet-simplete-hero: url('./media/images/meet-simplete-hero.png');
 $meet-simplete-mobile: url('./media/images/meet-simplete-mobile.png');
 $meet-simplete-tablet: url('./media/images/meet-simplete-tablet.png');
+$state-hero: url('./media/images/state-hero.png');
+$state-home: url('./media/images/state-home.png');
+$state-benefits: url('./media/images/state-benefits.png');
+$state-focus: url('./media/images/state-focus.png');
+$state-retention: url('./media/images/state-retention.png');
+$state-old-1: url('./media/images/state-old-1.png');
+$state-old-2: url('./media/images/state-old-2.png');
+$state-new: url('./media/images/state-new.png');
+$arrow-icon: url('./media/images/arrow.svg');
+$arrow-icon-black: url('./media/images/arrow-black.svg');
+$persona-icon: url('./media/images/persona.svg');
+
+
 
 @mixin illustration {
   background-color: $color-dark;
@@ -191,7 +216,19 @@ $meet-simplete-tablet: url('./media/images/meet-simplete-tablet.png');
   width: 25%;
 }
 
-.screen, .tablet, .mobile { 
+@mixin snippet {
+  @include screen;
+  background-size:contain;
+  margin-bottom: 0;
+}
+
+@mixin old-snippet {
+  @include snippet;
+  width: 37%;
+  margin-bottom: 2.5rem; // 40px
+}
+
+.screen, .tablet, .mobile, .snippet, .old-snippet { 
   @include screen;
   position: relative;
   p {
@@ -204,8 +241,13 @@ $meet-simplete-tablet: url('./media/images/meet-simplete-tablet.png');
   margin-right: 50px;
 }
 
+.old-snippet {
+  margin-right: 5%;
+}
+
 .tablet { @include tablet; }
 .mobile { @include mobile; }
+.old-snippet { @include old-snippet; }
 
 div.meet-simplete-hero {
   background-image: $meet-simplete-hero;
@@ -231,6 +273,46 @@ div.meet-simplete-video {
   height:600px;
 }
 
+div.state-hero {
+  background-image: $state-hero;
+  padding-top: 60%; // image height / image width * 100
+}
+
+div.state-home {
+  background-image: $state-home;
+  padding-top: 42.38830872%; // image height / image width * 54
+}
+
+div.state-benefits {
+  background-image: $state-benefits;
+  padding-top: 26.3221758%; // image height / image width * 54
+}
+
+div.state-focus {
+  background-image: $state-focus;
+  padding-top: 25.3054395%; // image height / image width * 54
+}
+
+div.state-retention {
+  background-image: $state-retention;
+  padding-top: 26.4351465%; // image height / image width * 54
+}
+
+div.state-old-1 {
+  background-image: $state-old-1;
+  padding-top: 25.01704532%; // image height / image width * 37
+}
+
+div.state-old-2 {
+  background-image: $state-old-2;
+  padding-top: 25.01704532%; // image height / image width * 37
+}
+div.state-new {
+  background-image: $state-new;
+  padding-top: 63%; // image height / image width * 54
+  width: 80%;
+}
+
 // 4. Layout -------------------------
 
 $main-padding: 4.375rem; // 70px
@@ -240,6 +322,12 @@ $main-padding: 4.375rem; // 70px
   padding: $main-padding;
   float:right;
   width: calc( 100vw - #{$nav-width} );
+}
+
+@mixin vertical-center {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 // 5. Components ------------------------------
@@ -343,7 +431,7 @@ $header-background: $color-dark;
 
     p.subhead {
       color:$color-off-white;
-      margin-top:18px;
+      margin-top: 1.125rem; // 18px
     }
   }
 
@@ -467,8 +555,10 @@ $case-section-padding: 6.25rem; // 100px
 @mixin case { // individual case pages
   padding-top: 1.4375rem; // 23px
 
-  div.text-container {
+  div.container {
     margin-bottom: 5.8125rem; // 93px
+    height: auto;
+    position:relative;
 
     h2 {
       color: $color-primary;
@@ -481,6 +571,11 @@ $case-section-padding: 6.25rem; // 100px
 
     p.subhead {
       margin-top: 4.5625rem; // 73px
+    }
+
+    p.note {
+      @include vertical-center;
+      top: 60%;
     }
 
     .left {
@@ -496,24 +591,76 @@ $case-section-padding: 6.25rem; // 100px
       width: 48%;
     }
 
+    .left-30 {
+      @extend .left;
+      width: 30%;
+      height:auto;
+    }
+
+    .left-30 + .right {
+      width: 66%;
+    }
+
+    .left-40 {
+      @extend .left;
+      width: 40%;
+      height:auto;
+    }
+
+    .left-40 + .right {
+      width:54%;
+    }
+
     div.stats {
       border-left: 1px solid $color-border;
       padding-left: 2.71875rem; // 43.5px
 
       div.row {
+        height: auto;
+        margin-bottom: 0.875rem; // 14px
+        position: relative;
+
         p.number {
           min-width: 8.9375rem; // 143px
         }
         p {
           display: inline-block;
+          margin-bottom: 0;
+        }
+        div.persona {
+          @include vertical-center;
+          display: inline-block;
+          position: absolute;
+        }
+        div.persona + p {
+          margin-left: 6.375rem;
         }
       }
+    }
+  }
+
+  div.container.text-photo {
+    margin-bottom: 0;
+
+    .text-container {
+      @include vertical-center;
+      top:40%;
+    }
+
+    p.subhead {
+      margin-top: 0;
     }
   }
 
   div.multiple-screens {
     position:relative;
     margin-top:10rem;
+    width:100%;
+  }
+
+  div.collection {
+    position:relative;
+    margin-top:2rem;
     width:100%;
   }
 
@@ -558,6 +705,17 @@ $case-section-padding: 6.25rem; // 100px
   border: 1px solid $color-primary;
   border-radius: 4px;
   padding: 0.875rem 1.75rem; // 14px 28px
+}
+
+// Aside
+
+@mixin Aside {
+  @include case;
+  background-color: $color-grey;
+
+  div.multiple-screens {
+    margin-top:2rem;
+  }
 }
 
 // Footer
