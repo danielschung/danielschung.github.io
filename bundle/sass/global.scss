@@ -168,6 +168,8 @@ $state-retention: url('./media/images/state-retention.png');
 $state-old-1: url('./media/images/state-old-1.png');
 $state-old-2: url('./media/images/state-old-2.png');
 $state-new: url('./media/images/state-new.png');
+$state-tablet: url('./media/images/state-tablet.png');
+$state-mobile: url('./media/images/state-mobile.png');
 $arrow-icon: url('./media/images/arrow.svg');
 $arrow-icon-black: url('./media/images/arrow-black.svg');
 $persona-icon: url('./media/images/persona.svg');
@@ -254,7 +256,6 @@ div.meet-simplete-hero {
 
 div.meet-simplete-tablet {
   background-image: $meet-simplete-tablet;
-  // padding-top: 66.7%;
   padding-top: 73.3%;
 }
 
@@ -305,10 +306,21 @@ div.state-old-2 {
   background-image: $state-old-2;
   padding-top: 25.01704532%; // image height / image width * 37
 }
+
 div.state-new {
   background-image: $state-new;
   padding-top: 63%; // image height / image width * 54
   width: 80%;
+}
+
+div.state-tablet {
+  background-image: $state-tablet;
+  padding-top: 71.76470565%; // image height / image width * 54
+}
+
+div.state-mobile {
+  background-image: $state-mobile;
+  padding-top: 47.9452055%; // image height / image width * 54
 }
 
 // 4. Layout -------------------------
@@ -457,6 +469,7 @@ $header-background: $color-dark;
   @include border-box;
   background-color: $color-white;
   padding-top: 6.6875rem; // 107px
+  padding-bottom: 1.45rem;
 
   p.small-header {
     margin-bottom: 1.1875rem; // 19px
@@ -551,8 +564,6 @@ $case-section-padding: 6.25rem; // 100px
 }
 
 @mixin case { // individual case pages
-  padding-top: 1.4375rem; // 23px
-
   div.container {
     margin-bottom: 5.8125rem; // 93px
     height: auto;
