@@ -188,6 +188,10 @@
     padding: $mobile-main-padding;
   }
 
+  section.image.wrapper {
+    padding: $mobile-main-padding 0 0 $mobile-main-padding;
+  }
+
   header.page { 
     padding: 8.9375rem $mobile-main-padding 3.5625rem $mobile-main-padding;
   }
