@@ -860,6 +860,8 @@ $case-section-padding: 6.25rem; // 100px
   padding-top: 5.6875rem !important; // 91px
   position:relative;
 
+  p { color: $color-off-white; }
+
   h1 {
     color: $color-off-white;
     margin-top: 1.125rem; // 18px
