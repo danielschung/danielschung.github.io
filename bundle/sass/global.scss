@@ -176,6 +176,14 @@ $state-new: url('./media/images/state-new.png');
 $state-tablet: url('./media/images/state-tablet.png');
 $state-mobile: url('./media/images/state-mobile.png');
 $dms-hero: url('./media/images/dms-hero.png');
+$dms-first-1: url('./media/images/dms-first-1.png');
+$dms-first-2: url('./media/images/dms-first-2.png');
+$dms-first-3: url('./media/images/dms-first-3.png');
+$dms-final-1: url('./media/images/dms-final-1.png');
+$dms-final-2: url('./media/images/dms-final-2.png');
+$ds-1: url('./media/images/ds-1.png');
+$ds-2: url('./media/images/ds-2.png');
+$ds-3: url('./media/images/ds-3.png');
 $arrow-icon: url('./media/images/arrow.svg');
 $arrow-icon-black: url('./media/images/arrow-black.svg');
 $persona-icon: url('./media/images/persona.svg');
@@ -332,6 +340,64 @@ div.state-mobile {
 div.dms-hero {
   background-image: $dms-hero;
   padding-top: 57.696567%; // image height / image width * 100
+}
+
+div.dms-first-1 {
+  background-image: $dms-first-1; 
+  margin-bottom: 2.5625rem; // 41px
+  padding-top: 34.61825736%; // image height / image width * 54
+  width: 54%;
+}
+
+div.dms-first-2 {
+  background-image: $dms-first-2; 
+  padding-top: 53.8992044%; // image height / image width * 50
+  float:right;
+  width: 40%;
+}
+
+div.dms-first-3 {
+  background-image: $dms-first-3; 
+  margin-bottom: 2.5625rem; // 41px
+  padding-top: 37.30705398%; // image height / image width * 50
+  width: 54%;
+}
+
+div.dms-final-1 {
+  background-image: $dms-final-1; 
+  padding-top: 38.17582434%; // image height / image width * 54
+  width: 54%;
+}
+
+div.dms-final-2 {
+  background-image: $dms-final-2; 
+  border-radius: 0.6875rem 0 0 0.6875rem; // 11px 0 0 11px
+  padding-top: 48.854962%; // image height / image width * 40
+  width: 40%;
+  float: right;
+}
+
+div.ds-1 {
+  background-image: $ds-1; 
+  float: left;
+  padding-top: 45.08509086%; // image height / image width * 54
+  width: 54%;
+}
+
+div.ds-2 {
+  background-image: $ds-2; 
+  float: right;
+  margin-bottom: 1rem;
+  padding-top: 24.4611528%; // image height / image width * 40
+  width: 40%;
+}
+
+div.ds-3 {
+  background-image: $ds-3; 
+  float: right;
+  margin-bottom: 1rem;
+  padding-top: 25.8646616%; // image height / image width * 40
+  width: 40%;
 }
 
 // 4. Layout -------------------------
@@ -535,7 +601,7 @@ $header-background: $color-dark;
     }
 
     p.bottom {
-      margin-top: 21px;
+      margin-top: 15px;
     }
   }
 }
@@ -635,37 +701,52 @@ $case-section-padding: 6.25rem; // 100px
       @extend .left;
       width: 60%;
       height:auto;
+      padding: 1.5rem 0;
+
+      p.description {
+        max-width: 80%;
+      }
     }
 
     .left-60 + .right {
       width: 34%;
+
+      p.note {
+        position:relative;
+        transform: translateY(0);
+      }
     }
 
     div.stats {
       div.row {
         height: auto;
         margin-bottom: 0.875rem; // 14px
+        padding: 10px 0;
         position: relative;
-
-        p.number {
-          min-width: 8.9375rem; // 143px
-        }
-
-        p.number.small {
-          @include h3;
-        }
 
         p {
           display: inline-block;
           margin-bottom: 0;
         }
+
+        p.number,
         div.persona {
           @include vertical-center;
           display: inline-block;
           position: absolute;
         }
-        div.persona + p {
+
+        p.number.small {
+          @include h3;
+          min-width: 8.9375rem; // 143px  
+        }
+
+        p.number + p {
           margin-left: 6.375rem;
+        }
+
+        div.persona + p {
+          margin-left: 4.575rem;
         }
       }
     }
@@ -673,6 +754,12 @@ $case-section-padding: 6.25rem; // 100px
     div.stats.right {
       border-left: 1px solid $color-border;
       padding-left: 2.71875rem; // 43.5px
+    }
+
+    div.long div.row {
+      p.number + p {
+        margin-left: 8.375rem;
+      }
     }
 
   }
@@ -720,6 +807,16 @@ $case-section-padding: 6.25rem; // 100px
 
   p {
     margin-bottom: 1.25rem; // 20px
+  }
+}
+
+@mixin GreySection {
+  background-color: $color-grey;
+  padding: 86px 73px;
+  margin-bottom: 0;
+
+  p { 
+    margin-bottom: 1.1875rem; //19px
   }
 }
 

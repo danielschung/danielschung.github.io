@@ -222,6 +222,14 @@ section.about {
   @include about;
 }
 
+section.grey {
+  @include GreySection;
+}
+
+section.image.wrapper {
+  padding: $main-padding 0 0 $main-padding;
+}
+
 // 5. Aside -----
 
 aside {
