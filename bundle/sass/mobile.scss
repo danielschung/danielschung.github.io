@@ -250,8 +250,15 @@
 }
 
 @media only screen and (max-width:415px) { // iphone 5/SE 
-  section.resume div.details div.list div.column {
-    display: block;
+  section.resume {
+    div.details div.list div.column {
+      display: block;
+    }
+
+    div.experience div.block p.title span {
+      display:block;
+      margin-left: 0;
+    }
   }
 
 }

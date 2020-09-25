@@ -53,33 +53,16 @@ a.open {
 
 a.open:hover {
   @include hover;
-  border-bottom: 1px solid $color-white;
+  color: $color-primary;
 }
 
 a.open::after {
-  content: $arrow-icon;
+  content: $arrow-icon-black;
   margin-left: 0.6875rem // 11px
 }
 
 a.open:active {
   background-color: $color-dark;
-}
-
-a.open.black {
-  color: $color-black;
-}
-
-a.open.black:hover {
-  @include hover;
-  border-bottom: 1px solid $color-black;
-}
-
-a.open.black::after {
-  content: $arrow-icon-black;
-}
-
-a.open.black:active {
-  background-color: $color-white;
 }
 
 button:focus {
@@ -117,6 +100,7 @@ nav {
 
   div.logo {
     @include nav-section;
+    @include logo;
     border-bottom: $nav-border;
     height: 6.25rem; // 100px
     top: 0;
@@ -142,6 +126,10 @@ nav {
 
     div.link { @include nav-social-links; }
     div.link:nth-child(2) { margin: 0 0.6875rem; /* 11px */ }
+
+    div.link.linkedin {
+      background-image: $linkedin-icon;
+    }
 
   }
 
@@ -245,13 +233,9 @@ aside {
 footer {
   @include Footer;
 
-  a.open {
-    color: $color-white;
-  }
-
   h1 a:hover {
     @include hover;
-    border-bottom: 2px solid $color-white;
+    color: $color-border;
   }
 }
 

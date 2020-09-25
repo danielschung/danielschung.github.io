@@ -9,12 +9,10 @@
 // 1. Colors --------------
 
 $color-primary: #57586B;
-// $color-dark: #1D1E2B;
 $color-dark: #202233;
 $color-black: #2B2B2B;
 $color-off-white: #F6F6F6;
 $color-white: #FFFFFF;
-// $color-nav-border: #292A3D;
 $color-nav-border: #2E3142;
 $color-border: #E3E3E3;
 $color-grey: #F7FAFB;
@@ -44,6 +42,13 @@ $lora-italic: 'lora-italic', 'sans-serif';
 @font-face {
   font-family: 'nunito-semibold';
   src: url(./media/fonts/nunito-semibold.ttf) format('truetype');
+}
+
+@mixin logo {
+  @include h1;
+  color: $color-white;
+  letter-spacing: 2.7px;
+  line-height: 2.3125rem; // 37px
 }
 
 @mixin h1 {
@@ -187,6 +192,7 @@ $ds-3: url('./media/images/ds-3.png');
 $arrow-icon: url('./media/images/arrow.svg');
 $arrow-icon-black: url('./media/images/arrow-black.svg');
 $persona-icon: url('./media/images/persona.svg');
+$linkedin-icon: url('./media/icons/linkedin.svg');
 
 
 
@@ -452,11 +458,11 @@ $nav-width: 15.625rem; // 202px
 }
 
 @mixin nav-social-links {
-  background-color:$color-off-white;
+  // background-color:$color-off-white;
   border-radius: 100px;
   display:inline-block;
-  height: 1.125rem; // 18px
-  width: 1.125rem; // 18px
+  height: 1.25rem; // 20px
+  width: 1.25rem; // 20px
 
   div.link:nth-child(2) {
     margin: 0 0.6875rem; // 11px
@@ -575,18 +581,15 @@ $header-background: $color-dark;
 
 @mixin resumeHeader{
   @include caseHeader;
-  // div.left {
-  //   float: left;
-  // }
+
   p {
     max-width: 609px;
     margin-bottom: 5.484375rem; // 87.75px
   }
   button.white {
-    // float: right;
     position: absolute;
-    right: $case-section-padding;
-    top: $case-section-padding;
+    right: $main-padding;
+    top: 6.6875rem;
   }
 }
 
@@ -839,6 +842,7 @@ $case-section-padding: 6.25rem; // 100px
 
 @mixin resume {
   @include case;
+
   div.details {
     margin-bottom: 2.9375rem; // 47px
     max-width: 53.5625rem; // 857px
@@ -874,6 +878,7 @@ $case-section-padding: 6.25rem; // 100px
   }
 
   div.experience {
+    max-width: 900px;
     p.large {
       margin-bottom: 1.0625rem; // 17px
     }
@@ -910,7 +915,7 @@ $case-section-padding: 6.25rem; // 100px
   border: none;
   background-color: transparent;
   border-bottom: 1px solid transparent;
-  color: $color-off-white;
+  color: $color-black;
   outline:none;
   padding:0;
 }
