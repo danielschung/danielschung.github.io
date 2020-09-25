@@ -529,6 +529,7 @@ $header-background: $color-dark;
     float: right;
     height: 598.67256638px;
     width: 550px;
+    position:relative;
   }
 }
 
@@ -569,6 +570,23 @@ $header-background: $color-dark;
     background-color: $color-primary;
     height: 2px;
     width: 2.296875rem; // 36.75px
+  }
+}
+
+@mixin resumeHeader{
+  @include caseHeader;
+  // div.left {
+  //   float: left;
+  // }
+  p {
+    max-width: 609px;
+    margin-bottom: 5.484375rem; // 87.75px
+  }
+  button.white {
+    // float: right;
+    position: absolute;
+    right: $case-section-padding;
+    top: $case-section-padding;
   }
 }
 
@@ -816,6 +834,71 @@ $case-section-padding: 6.25rem; // 100px
 
   p { 
     margin-bottom: 1.1875rem; //19px
+  }
+}
+
+@mixin resume {
+  @include case;
+  div.details {
+    margin-bottom: 2.9375rem; // 47px
+    max-width: 53.5625rem; // 857px
+
+    div.list {
+      display: inline-block;
+      vertical-align: top;
+
+      div.column {
+        display: inline-block;
+        vertical-align: top;
+        margin-bottom: 2.5rem;
+      }
+
+      div.column p:first-child {
+        margin-top: 0.625rem; // 10px
+      }
+
+    }
+
+    div.list:nth-of-type(1) {
+      margin-right: 7rem;
+    }
+
+    div.list:nth-of-type(2) {
+      // float:right;
+
+      div.column:nth-of-type(1),
+      div.column:nth-of-type(2) {
+        margin-right: 2.3125rem // 37px
+      }
+    }
+  }
+
+  div.experience {
+    p.large {
+      margin-bottom: 1.0625rem; // 17px
+    }
+
+    div.block { 
+      margin-bottom: 3.125rem; // 50px
+
+      p.title {
+        margin-bottom: 0.4375rem; // 7px
+
+        span {
+          @include p-note;
+          margin-left: 0.625rem; // 10px
+        }
+      }
+
+      p {
+        margin-bottom: 0.9375rem; // 15px
+      }
+    }
+
+    p.note {
+      // margin-top: 2.0625rem; // 33px
+      margin-top: 83px;
+    }
   }
 }
 

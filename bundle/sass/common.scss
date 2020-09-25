@@ -166,6 +166,10 @@ header.case {
   @include caseHeader;
 }
 
+header.resume {
+  @include resumeHeader;
+}
+
 
 // 4. Section ----------------------------
 
@@ -214,16 +218,16 @@ section.case {
   margin: 0;
 }
 
-div.container {
-
-}
-
 section.about {
   @include about;
 }
 
 section.grey {
   @include GreySection;
+}
+
+section.resume {
+  @include resume;
 }
 
 section.image.wrapper {
