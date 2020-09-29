@@ -6,6 +6,7 @@
 //  4. Section
 //  5. Aside
 //  6. Footer
+//  7. Form
 
 @import 'global';
 
@@ -47,21 +48,25 @@ a {
   @include wrapper;
 }
 
-a.open {
+a.open,
+button.open {
   @include openButton;
 }
 
-a.open:hover {
+a.open:hover,
+button.open:hover {
   @include hover;
   color: $color-primary;
 }
 
-a.open::after {
+a.open::after,
+button.open::after {
   content: $arrow-icon-black;
   margin-left: 0.6875rem // 11px
 }
 
-a.open:active {
+a.open:active,
+button.open:active {
   background-color: $color-white;
 }
 
@@ -236,6 +241,18 @@ footer {
   h1 a:hover {
     @include hover;
     color: $color-border;
+  }
+}
+
+// 7. Form -----
+
+section.contact {
+  h2{
+    color: $color-primary;
+  }
+
+  form {
+    @include contactForm;
   }
 }
 

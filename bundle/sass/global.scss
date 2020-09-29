@@ -960,6 +960,64 @@ $case-section-padding: 6.25rem; // 100px
   }
 }
 
+// Contact Form
+
+@mixin contactForm {
+  * {
+    display: block;
+  }
+
+  div.field {
+    display: inline-block;
+    margin-bottom: 3rem;
+    width: 100%;
+    * {
+      display: block;
+    }
+  }
+
+  div.first {
+    margin-top: 4.8125rem; // 77px
+    margin-bottom: 4.8125rem; // 77px
+
+    div.field {
+      max-width: 350px;
+    }
+
+    div.field:nth-of-type(1) {
+      margin-right: 50px;
+    }
+  }
+
+  label {
+    @include strong;
+    color: $color-primary;
+  }
+
+  input, textarea, span {
+    @include p;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $color-border;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline-color: transparent;
+    outline-style: none;
+    padding-top:10px;
+    width:100%;
+  }
+
+  span {
+    padding: 7px 0 27px 0;
+    max-width: 750px;
+  }
+
+  button {
+    margin-top: 4rem;
+  }
+}
+
 
 
 
