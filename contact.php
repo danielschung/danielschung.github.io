@@ -34,7 +34,7 @@
   <section class="wrapper contact">
     <h2>Send me a message, and let’s chat.</h2>
 
-    <form action=”form.php” method=”POST”>
+    <form method="post" action=”form.php”>
       <div class="first">
         <div class="field">
           <label for="contactName">Name</label>
