@@ -1,14 +1,17 @@
 <?php 
 
-$name = $_POST['contactName'];
-$email = $_POST['contactEmail'];
-$message = $_POST['contactMessage'];
-$formcontent="From: $name \n Message: $message";
-$recipient = "danielschung@icloud.com";
-$subject = "Portfolio Interest";
-$mailheader = "From: $email \r\n";
+if (isset($_POST['submit'])) {
+  $name = $_POST['contactName'];
+  $mailFrom = $_POST['contactEmail'];
+  $message = $_POST['contactMessage'];
+  $subject = "Portfolio Interest";
 
-mail($recipient, $subject, $formcontent, $mailheader) or die("Error!");
-echo "Thank You!";
+  $mailto = "danielschung@icloud.com";
+  $mailheader = "From: ".$mailFrom;
+  $formcontent=" You have recieved a message on danielschung.github.io.\n\n".$message;
+
+  mail($mailto, $subject, $formcontent, $mailheader);
+  header("Location: form.php?mailsend");
+}
 
 ?>
