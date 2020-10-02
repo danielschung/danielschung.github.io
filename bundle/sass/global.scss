@@ -663,13 +663,14 @@ $case-section-padding: 6.25rem; // 100px
 
 @mixin case { // individual case pages
   div.container {
-    margin-bottom: 5.8125rem; // 93px
+    margin-bottom: 4.8125rem; // 77px
     height: auto;
     position:relative;
 
     h2 {
       color: $color-primary;
       margin-bottom: 1rem; // 16px
+      padding-top: 1rem; // 16px
     }
 
     p {
@@ -677,7 +678,7 @@ $case-section-padding: 6.25rem; // 100px
     }
 
     p.subhead {
-      margin-top: 4.5625rem; // 73px
+      margin-top: 4.1875rem; // 67px
     }
 
     p.note {
@@ -722,7 +723,7 @@ $case-section-padding: 6.25rem; // 100px
       @extend .left;
       width: 60%;
       height:auto;
-      padding: 1.5rem 0;
+      padding: 1rem 0;
 
       p.description {
         max-width: 80%;
