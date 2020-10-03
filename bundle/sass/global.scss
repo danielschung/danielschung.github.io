@@ -683,7 +683,7 @@ $case-section-padding: 6.25rem; // 100px
 
     p.note {
       @include vertical-center;
-      top: 60%;
+      top: 70%;
     }
 
     .left {
@@ -919,6 +919,7 @@ $case-section-padding: 6.25rem; // 100px
   color: $color-black;
   outline:none;
   padding:0;
+  text-decoration: none;
 }
 
 @mixin whiteButton {
@@ -957,6 +958,8 @@ $case-section-padding: 6.25rem; // 100px
 
     a {
       border-bottom: 2px solid transparent;
+      color: $color-off-white;
+      text-decoration: none;
     }
   }
 }
