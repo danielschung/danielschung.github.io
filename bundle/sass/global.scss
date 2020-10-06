@@ -20,17 +20,19 @@ $color-grey: #F7FAFB;
 // 2. Typograhpy ----------------------------------
 
 $freight:'freight', 'garamond', 'sans-serif';
+$nunito-light: 'nunito-light', 'helvetica', 'sans';
+$nunito-semibold: 'nunito-semibold', 'helvetica', 'sans';
 $lora-italic: 'lora-italic', 'sans-serif';
+
 @mixin poppins {
-  font-family:'poppins', 'helvetica', 'sans';
+  font-family:'poppins', 'nunito-light', 'helvetica', 'sans';
   font-weight: 200;
 }
+
 @mixin poppins-bold {
-  font-family:'poppins', 'helvetica', 'sans';
+  font-family:'poppins', 'nunito-semibold', 'helvetica', 'sans';
   font-weight: 400;
 }
-
-// -----
 
 @font-face {
   font-family: 'freight';
