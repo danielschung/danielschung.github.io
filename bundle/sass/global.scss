@@ -20,9 +20,17 @@ $color-grey: #F7FAFB;
 // 2. Typograhpy ----------------------------------
 
 $freight:'freight', 'garamond', 'sans-serif';
-$nunito-light: 'nunito-light', 'helvetica', 'sans';
-$nunito-semibold: 'nunito-semibold', 'helvetica', 'sans';
 $lora-italic: 'lora-italic', 'sans-serif';
+@mixin poppins {
+  font-family:'poppins', 'helvetica', 'sans';
+  font-weight: 200;
+}
+@mixin poppins-bold {
+  font-family:'poppins', 'helvetica', 'sans';
+  font-weight: 400;
+}
+
+// -----
 
 @font-face {
   font-family: 'freight';
@@ -79,30 +87,35 @@ $lora-italic: 'lora-italic', 'sans-serif';
   color: $color-black;
   font-size: 1.25rem; // 20px
   line-height: 2rem; // 32px
-  font-family: $nunito-semibold;
+  @include poppins-bold;
+  // font-family: $nunito-semibold;
 }
 
 @mixin p-large {
   @include subhead;
-  font-family: $nunito-light;
+  @include poppins;
+  // font-family: $nunito-light;
 }
 
 @mixin p-small {
   color: $color-black;
-  font-family: $nunito-light;
+  @include poppins;
+  // font-family: $nunito-light;
   font-size: 0.75rem; // 12px
   line-height: 1.125rem; // 18px
 }
 
 @mixin p {
   color: $color-black;
-  font-family: $nunito-light;
+  @include poppins;
+  // font-family: $nunito-light;
   font-size: 1rem; // 16px
   line-height: 1.625rem; // 26px
 }
 
 @mixin strong {
-  font-family: $nunito-semibold;
+  @include poppins-bold;
+  // font-family: $nunito-semibold;
 }
 
 @mixin p-note {
@@ -114,7 +127,8 @@ $lora-italic: 'lora-italic', 'sans-serif';
 
 @mixin nav-link {
   color: $color-primary;
-  font-family: $nunito-semibold;
+  @include poppins-bold;
+  // font-family: $nunito-semibold;
   font-size: 0.9375rem; //15px
   line-height: 1.4375rem; // 23px
   text-transform: uppercase;
@@ -128,7 +142,8 @@ $lora-italic: 'lora-italic', 'sans-serif';
 
 @mixin button-text {
   color: $color-dark;
-  font-family: $nunito-light;
+  @include poppins;
+  // font-family: $nunito-light;
   font-size: 1rem; //16px
   line-height: 1.5rem; // 24px
 }
