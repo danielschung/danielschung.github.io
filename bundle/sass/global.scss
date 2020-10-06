@@ -513,7 +513,6 @@ $header-background: $color-dark;
   height: 100vh;
 
   div.header-text { 
-    height: 11.5625rem;
     top: calc(50vh - (11.5625rem / 2) );
     max-width: 28.125rem; // 450px
     position: relative;
