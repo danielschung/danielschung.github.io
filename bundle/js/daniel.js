@@ -37,7 +37,7 @@ function hide(object) {
 }
 
 function fade(object) {
-  $(object).fadeTo(777, 1, 'swing');
+  $(object).fadeTo(770, 1, 'swing');
 }
 
 function scrollFade(object) {
