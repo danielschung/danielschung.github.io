@@ -1,10 +1,10 @@
 // --- Description: basic functionality
 // Table of Contents
 //  1. Mobile Nav
-//  2. Animations
-//  3. Video
+//  2. Anime Functions
+//  3. Anime Deploy on Scroll
 
-$( document ).ready(function() {
+$(document).ready( function() {
 
 //  1. Mobile Nav -----
     
@@ -25,20 +25,47 @@ $('div.mobile-nav').click( function() {
 
 });
 
-//  2. Animations -----
+//  2. Anime Functions -----
 
-// function fades() {
-//   $('div.header-text').hide();
-//   $('div.header-text').fadeIn(1000,'swing');
-// }
+function introFade(object) {
+  $(object).css('opacity','0');
+  $(object).fadeTo(977, 1, 'swing');
+}
 
-// fades();
+function hide(object) {
+  $(object).css('opacity','0');
+}
 
-//  3. Video -----
+function fade(object) {
+  $(object).fadeTo(777, 1, 'swing');
+}
 
-$('video').focus( function() {
-  $(this).play();
-})
+function scrollFade(object) {
+  $(object).each( function(i){
+    // let bottom_of_element = $(this).offset().top + $(this).outerHeight();
+    let top_of_element = $(this).offset().top;
+    let bottom_of_window = $(window).scrollTop() + $(window).height();
+    if( bottom_of_window > top_of_element ){
+      fade($(this));
+    }
+  });
+}
+
+//  3. Anime Deploy -----
+
+introFade('header.wrapper *');
+hide('section.wrapper *');
+hide('footer.wrapper *');
+scrollFade('section.wrapper *');
+scrollFade('footer.wrapper *');
+
+
+$(window).scroll( function(){ // deploy on scroll
+  scrollFade('section.wrapper *');
+  scrollFade('footer.wrapper *');
+});
+
+
 
 
 

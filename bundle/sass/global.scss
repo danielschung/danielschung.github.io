@@ -434,7 +434,6 @@ $main-padding: 4.375rem; // 70px
   -webkit-transition: all .1s ease-in-out;
 }
 
-
 // navigation
 
 $nav-border: 1px solid $color-nav-border;
@@ -447,7 +446,7 @@ $nav-width: 15.625rem; // 202px
   height: 100vh;
   position: fixed;
   width: $nav-width;
-  z-index: 1;
+  z-index: 2;
 }
 
 @mixin nav-section {
