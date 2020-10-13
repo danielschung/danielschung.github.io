@@ -209,10 +209,8 @@ $linkedin-icon: url('./media/icons/linkedin.svg');
 @mixin illustration-wide {
   background-repeat: no-repeat;
   background-size: 100%;
-  background-position: center;
   display: inline-block;
   height: 0;
-  width: 100%;
 }
 
 @mixin drop-shadow {
@@ -622,14 +620,12 @@ $header-background: $color-dark;
   div.contact-illustration {
     @include illustration-wide;
     background-image: $contact-illustration;
-    // background-size: contain;
     background-position: bottom right;
-    // height: 50vh;
-    padding-top: 29.910141rem;
+    padding-top: 41.8741974rem; // height / width * 70
     position: absolute;
     right: $main-padding;
     bottom: 0;
-    width: 50%;
+    width: 70%;
     z-index: 0;
   }
 }

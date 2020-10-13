@@ -50,7 +50,7 @@
 
   header.contact {
     div.contact-illustration {
-      padding-top: 59.820282rem;
+      padding-top: 59.820282rem; // height / width * 100
       right: 0;
       width: 100%;
     }
@@ -83,7 +83,6 @@
     div.text-container {
       display: block;
       margin: 50px 0 0 0;
-      // max-width: 500px;
       position: relative;
     }
 
