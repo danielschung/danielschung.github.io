@@ -621,7 +621,7 @@ $header-background: $color-dark;
     @include illustration-wide;
     background-image: $contact-illustration;
     background-position: bottom right;
-    padding-top: 41.8741974rem; // height / width * 70
+    padding-top: 41.8741974rem; // height / width * 70 (div width)
     position: absolute;
     right: $main-padding;
     bottom: 0;

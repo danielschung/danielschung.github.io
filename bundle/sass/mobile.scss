@@ -49,6 +49,10 @@
   }
 
   header.contact {
+    div.header-text {
+      top: 14vh;
+    }
+
     div.contact-illustration {
       padding-top: 59.820282rem; // height / width * 100
       right: 0;
@@ -246,6 +250,18 @@
       height: 60vh;
       width: 90%;
       right: 20px;
+    }
+  }
+
+  header.contact {
+    div.header-text {
+      top: 5vh;
+    }
+
+    div.contact-illustration {
+      padding-top: 59.820282rem; // height / width * 100
+      right: 0;
+      width: 100%;
     }
   }
 
