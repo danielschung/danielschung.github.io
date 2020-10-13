@@ -162,6 +162,10 @@ header.resume {
   @include resumeHeader;
 }
 
+header.contact {
+  @include contactHeader;
+}
+
 
 // 4. Section ----------------------------
 
@@ -246,12 +250,21 @@ footer {
 // 7. Form -----
 
 section.contact {
+  background-color: $color-dark;
+
   h2{
     color: $color-primary;
   }
 
   form {
     @include contactForm;
+  }
+
+  div.contact-illustration {
+    @include illustration;
+    background-image: $contact-illustration;
+    background-size: 85%;
+    background-position: 43% 23px;
   }
 }
 

@@ -163,10 +163,11 @@ strong { @include strong; }
 
 // 3. Assets ------------------------------------------
 
-$header-illustration: url('./media/images/illustration-header2.png');
-$design-illustration: url('./media/images/illustration-design2.png');
-$dev-illustration: url('./media/images/illustration-dev2.png');
-$teams-illustration: url('./media/images/illustration-teams2.png');
+$header-illustration: url('./media/images/illustration-header.png');
+$design-illustration: url('./media/images/illustration-design.png');
+$dev-illustration: url('./media/images/illustration-dev.png');
+$teams-illustration: url('./media/images/illustration-teams.png');
+$contact-illustration: url('./media/images/illustration-contact-wide.png');
 $meet-simplete-hero: url('./media/images/meet-simplete-hero.png');
 $meet-simplete-mobile: url('./media/images/meet-simplete-mobile.png');
 $meet-simplete-tablet: url('./media/images/meet-simplete-tablet.png');
@@ -203,6 +204,15 @@ $linkedin-icon: url('./media/icons/linkedin.svg');
   display:inline-block;
   height:250px;
   width:250px;
+}
+
+@mixin illustration-wide {
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  display: inline-block;
+  height: 0;
+  width: 100%;
 }
 
 @mixin drop-shadow {
@@ -595,6 +605,32 @@ $header-background: $color-dark;
     position: absolute;
     right: $main-padding;
     top: 6.6875rem;
+  }
+}
+
+@mixin contactHeader {
+  @include introHeader;
+  @include border-box;
+    
+  div.header-text {
+    p.large {
+      color: $color-off-white;
+      margin-top: 1.125rem; // 18px
+    }
+  }
+
+  div.contact-illustration {
+    @include illustration-wide;
+    background-image: $contact-illustration;
+    // background-size: contain;
+    background-position: bottom right;
+    // height: 50vh;
+    padding-top: 29.910141rem;
+    position: absolute;
+    right: $main-padding;
+    bottom: 0;
+    width: 50%;
+    z-index: 0;
   }
 }
 
