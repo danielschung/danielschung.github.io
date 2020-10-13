@@ -512,8 +512,8 @@ $header-background: $color-dark;
   height: 100vh;
 
   div.header-text { 
-    // top: calc(50vh - (11.5625rem / 2) );
-    top: 7rem;
+    top: calc(50vh - (20rem / 2) );
+    // top: 14rem;
     max-width: 28.125rem; // 450px
     position: relative;
     z-index: 1;

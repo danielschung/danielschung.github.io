@@ -53,20 +53,18 @@ function scrollFade(object) {
 
 //  3. Anime Deploy -----
 
-introFade('header.wrapper *');
-hide('section.wrapper *');
-hide('footer.wrapper *');
-scrollFade('section.wrapper *');
-scrollFade('footer.wrapper *');
+introFade('.wrapper *');
+
+// hide('section.wrapper *');
+// hide('footer.wrapper *');
+// scrollFade('section.wrapper *');
+// scrollFade('footer.wrapper *');
 
 
-$(window).scroll( function(){ // deploy on scroll
-  scrollFade('section.wrapper *');
-  scrollFade('footer.wrapper *');
-});
-
-
-
+// $(window).scroll( function(){ // deploy on scroll
+//   scrollFade('section.wrapper *');
+//   scrollFade('footer.wrapper *');
+// });
 
 
 });
