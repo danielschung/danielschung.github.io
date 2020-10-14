@@ -11,7 +11,7 @@
 $color-primary: #57586B;
 $color-dark: #202233;
 $color-black: #2B2B2B;
-$color-off-white: #F6F6F6;
+$color-off-white: #F7F7F7;
 $color-white: #FFFFFF;
 $color-nav-border: #2E3142;
 $color-border: #E3E3E3;
@@ -193,8 +193,7 @@ $ds-3: url('./media/images/ds-3.png');
 $arrow-icon: url('./media/images/arrow.svg');
 $arrow-icon-black: url('./media/images/arrow-black.svg');
 $persona-icon: url('./media/images/persona.svg');
-$linkedin-icon: url('./media/icons/linkedin.svg');
-
+$linkedin-icon: url('./media/icons/linkedin.png');
 
 
 @mixin illustration {
@@ -465,7 +464,6 @@ $nav-width: 15.625rem; // 202px
 }
 
 @mixin nav-social-links {
-  // background-color:$color-off-white;
   border-radius: 100px;
   display:inline-block;
   height: 1.25rem; // 20px

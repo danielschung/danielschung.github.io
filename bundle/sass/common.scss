@@ -133,6 +133,17 @@ nav {
 
     div.link.linkedin {
       background-image: $linkedin-icon;
+      // background-color:blue;
+    }
+
+    p {
+      color: $color-off-white;
+      font-size: 0.77rem;
+      display:inline-block;
+      margin-left: 1rem;
+      top:-5px;
+      // float:right;
+      position:relative;
     }
 
   }

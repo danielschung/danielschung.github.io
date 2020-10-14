@@ -9,7 +9,9 @@ $(document).ready( function() {
 //  1. Mobile Nav -----
     
 $('div.mobile-nav').click( function() {
+  $('div.logo').fadeIn(1000);
   $('div.links a').fadeIn(1000);
+  $('div.social').fadeIn(1000);
   $('nav').animate({width:'252px'},200,'swing');
   $('div.mobile-nav div.line:nth-child(1)').animate({width:'100%'},200,'swing');
   $('div.mobile-nav div.close').show();
@@ -19,7 +21,9 @@ $('div.mobile-nav').click( function() {
     event.stopPropagation();
     $('nav').animate({width:'0px'},200,'swing');
     $('div.mobile-nav div.line:nth-child(1)').animate({width:'67%'},200,'swing');
-    $('div.links a').fadeOut();
+    $('div.logo').hide();
+    $('div.links a').hide();
+    $('div.social').hide();
     $('div.mobile-nav div.close').hide();
   });
 
