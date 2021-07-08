@@ -1,0 +1,9 @@
+<svg viewBox="0 0 649 297" xmlns="http://www.w3.org/2000/svg">
+	<g id="blue-papers">
+		<path id="paper-blue-3" d="M649 0H533V173H649V0Z" fill="#7B6FC0"/>
+		<path id="paper-blue-2" d="M323 124H207V297H323V124Z" fill="#7B6FC0"/>
+		<path id="paper-blue-1" d="M130 0H0V161H130V0Z" fill="#7B6FC0"/>
+		<path id="sticky-blue-2" d="M354 93H292V155H354V93Z" fill="#C3BCE8"/>
+		<path id="sticky-blue-1" d="M127 179H65V241H127V179Z" fill="#C3BCE8"/>
+	</g>
+</svg>

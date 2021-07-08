@@ -1,0 +1,9 @@
+<svg viewBox="0 0 513 337" xmlns="http://www.w3.org/2000/svg">
+	<g id="red-papers">
+		<path id="paper-red-2" d="M489 164H358V337H489V164Z" fill="#F3A897"/>
+		<path id="paper-red-1" d="M269 36H124V228H269V36Z" fill="#F3A897"/>
+		<path id="sticky-red-3" d="M513 152H453V212H513V152Z" fill="#FFDAC8"/>
+		<path id="sticky-red-2" d="M294 185H222V257H294V185Z" fill="#FFDAC8"/>
+		<path id="sticky-red-1" d="M60 0H0V60H60V0Z" fill="#FFDAC8"/>
+	</g>
+</svg>

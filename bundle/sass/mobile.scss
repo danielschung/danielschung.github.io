@@ -1,298 +1,60 @@
-@import 'global';
-
-@media only screen and (max-width:1024px) { // iPad Pro
-
-  nav { 
-    right:0;
-    border-left: $nav-border;
-    width:0;
-
-    div.logo {
-      height: 150px; // 100px
-      border-bottom: none;
-    }
-
-    div.links {
-      top: 150px;
-
-      a {
-        @include nav-link-mobile;
-      }
-    }
-  }
-
-  div.mobile-nav { display: block; }
-  .wrapper { width: 100vw }
-
-  header.intro {
-    div.header-text {
-      top: 14vh;
-    }
-
-    div.header-illustration {
-      height: 70vh;
-      width: 70vw;
-    }
-  }
-
-  header.resume {
-    p {
-      margin-bottom: 2.2rem;
-    }
-    button.white {
-      position: relative;
-      top: 0;
-      right: 0;
-      margin-bottom: 4rem;
-      margin-top: 0;
-    }
-  }
-
-  header.contact {
-    div.header-text {
-      top: 14vh;
-    }
-
-    div.contact-illustration {
-      padding-top: 59.820282rem; // height / width * 100
-      right: 0;
-      width: 100%;
-    }
-  }
-
-  section.resume.wrapper {
-    padding-top: 2.2rem;
-  }
+@media only screen and (max-width:1170px) { // smaller browser
+	body.home section.intro div.left {
+		top:0;
+		height: 50vh;
+		width: 100vw;
+	}
+	body.home section.intro div.right {
+		bottom:0;
+		height: 50vh;
+		width: 100vw;
+	}
 }
 
-@media only screen and (max-width:769px) { // iPad normal
-  section.interests h2 { max-width: 100%; }
-
-  header.intro {
-    div.header-illustration {
-      top: 30vh;
-    }
-  }
-
-  div.interest-card {
-    margin-bottom:70px;
-
-    div.design-illustration,
-    div.dev-illustration,
-    div.teams-illustration {
-      display: block;
-      margin: 0 auto;
-    }
-
-    div.text-container {
-      display: block;
-      margin: 50px 0 0 0;
-      position: relative;
-    }
-
-    div.interest-card {
-      div.text-container {
-        text-align: left;
-
-        p.large {
-          @include p;
-        }
-
-        p.bottom {
-          @include p-small;
-        }
-      }
-    }
-  }
-
-  section.cases {
-    div.case-card {
-      h1.massive {
-        display: block;
-        position: relative;
-        text-align: left;
-      }
-
-      div.text-container {
-        display: block;
-        margin-left: 0;
-        margin-top:50px;
-      }
-    }
-  }
-
-  section.case {
-    div.container {
-      .left, .right {
-        float:none;
-        width:100%;
-      }
-
-      .Right {
-        margin-top: 5.0625rem; // 81px
-      }
-
-      .stats {
-        margin-top: 2rem;
-      }
-
-      .left-30 + .right,
-      .left-40 + .right,
-      .left-40 {
-        width:100%;
-        margin-bottom: 2rem;
-      }
-
-      .left-40 + .right {
-        margin-top: 2rem;
-      }
-
-      .left-60 {
-        padding: 0;
-      }
-
-      .left-60 p.description {
-        max-width: 100%;
-      }
-
-      .left-60 + .right {
-        width: 100%;
-      }
-
-      p.note,
-      div.text-container.left-40 {
-        position:relative;
-        top:0;
-        transform: translateY(0);
-      }
-
-      div.text-container.left-40 {
-        p.subhead {
-          margin-top: 4.5625rem; // 73px
-        }
-      }
-
-      div.state-home {
-        padding-top: 78.496868%; // image height / image width * 54
-      }
-
-      div.state-benefits {
-        padding-top: 48.74477%; // image height / image width * 54
-      }
-
-      div.state-focus {
-        padding-top: 46.861925%; // image height / image width * 54
-      }
-
-      div.state-retention {
-        padding-top: 48.953975%; // image height / image width * 54
-      }
-
-    }
-
-  }
-
-  aside {
-    div.collection {
-      .old-snippet {
-        width: 45%;
-      }
-
-      .state-old-2 {
-        margin-right: 0;
-      }
-      .state-new {
-        width: 100%;
-      }
-    }
-  }
-
-  section.contact {
-    form {
-      div.first {
-        div.field {
-          width: 100%;
-        }
-      }
-    }
-  }
-
+@media only screen and (max-width:768px) { // iPad
+	body.home section.intro div.right div.container {
+		top: 7rem;
+	}
 }
 
-@media only screen and (max-width:415px) { // all mobile
-  html { font-size: 14px; }
-
-  $mobile-main-padding: 37px;
-
-  .wrapper {
-    padding: $mobile-main-padding;
-  }
-
-  section.image.wrapper {
-    padding: $mobile-main-padding 0 0 $mobile-main-padding;
-  }
-
-  header.page { 
-    padding: 8.9375rem $mobile-main-padding 3.5625rem $mobile-main-padding;
-  }
-
-  div.mobile-nav { 
-    right: $mobile-main-padding;
-    top: $mobile-main-padding;
-  }
-
-  header.intro {
-    div.header-text {
-      top: 7vh;
-    }
-
-    div.header-illustration {
-      height: 60vh;
-      width: 90vw;
-      right: 20px;
-    }
-  }
-
-  header.contact {
-    div.header-text {
-      top: 5vh;
-    }
-
-    div.contact-illustration {
-      // padding-top: 59.820282rem; // height / width * 100
-      padding-top:20rem;
-      right: 0;
-      width: 100%;
-    }
-  }
-
-  section.cases {
-    padding: 0 $mobile-main-padding 10.5rem /* 168px */ $mobile-main-padding;
-  }
-
-  section.resume div.details div.list:nth-of-type(2) {
-    div.column:nth-of-type(1) {
-      margin-right: 4rem;
-    }
-
-    div.column:nth-of-type(2) {
-      margin-right: 0;
-    }
-    margin-right: 3rem;
-  }
-
+@media only screen and (max-width:600px) { // all mobile
+	html {
+	  font-size: 12px;
+	}
+	body.home section.intro div.right,
+	body.home section.intro div.left {
+		padding: 0 1.875rem;
+	}
+	body.home section.intro div.left div.container {
+		padding-right: 1.875rem;
+	}
+	body.home section.intro div.left div.container,
+	body.home section.intro div.right div.container {
+		display: block;
+		position: relative;
+	}
+	body.home section.intro div.right div.container a.button:nth-child(1),
+	body.home section.intro div.right div.container a.button:nth-child(2) {
+		display: inline-block;
+		left:0;
+		right:0;
+		position: relative;
+		margin-bottom: 1rem;
+	}
 }
 
-@media only screen and (max-width:415px) { // iphone 5/SE 
-  section.resume {
-    div.details div.list div.column {
-      display: block;
-    }
+@media only screen and (max-width:375px) { // smaller mobile 
+	body.home section.intro div.left div.container {
+		position: absolute;
+		bottom: 0;
+	}
+}
 
-    div.experience div.block p.title span {
-      display:block;
-      margin-left: 0;
-    }
-  }
-
+@media only screen and (max-width:320px) { // xsmall mobile
+	body.home section.intro div.left {
+		height: 60vh;
+	}
+	body.home section.intro div.right {
+		height: 40vh;
+	}
 }
