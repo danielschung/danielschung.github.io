@@ -48,6 +48,16 @@
 		position: absolute;
 		bottom: 0;
 	}
+	body.home section.intro div.right div.container {
+		top: 5.5rem;
+	}
+	body.home section.intro div.right div.container a.flux:nth-child(1),
+	body.home section.intro div.right div.container a.flux:nth-child(2) {
+		position: relative;
+		display: block;
+		left: 0;
+		margin-bottom: 1.5rem;
+	}
 }
 
 @media only screen and (max-width:320px) { // xsmall mobile
