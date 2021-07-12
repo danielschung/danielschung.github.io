@@ -57,10 +57,9 @@ body.home {
 			}
 
 			img.home-main {
-				top: 100%;
-				transform: translateY(-100%);
-				position: relative;
-				margin: 0 auto;
+				bottom: 0;
+				position: absolute;
+				left: 0;
 				width: 100%;
 			}
 		}
