@@ -116,6 +116,12 @@ $tiempos-text: 'tiempos-text', 'garamond', 'sans-serif';
   font-size: 1rem;
 }
 
+@mixin p-xlarge-caption {
+  @include p-large-caption;
+  line-height: 210%;
+  font-size: 1.3rem;
+}
+
 // call mixins
 
 h1 { @include h1; }
@@ -123,6 +129,7 @@ h2 { @include h2; }
 h3 { @include h3; }
 h4 { @include h4; }
 p.large-caption { @include p-large-caption; }
+p.xlarge-caption { @include p-xlarge-caption; }
 p { @include p; }
 a.social { @include a-social; }
 a.social:hover { color: $color-accent; }

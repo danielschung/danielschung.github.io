@@ -3,35 +3,31 @@ body.about {
 		height: 100vh;
 		width: 100vw;
 
-		div.full {
+		div.left {
 			background-color: $color-p-dark;
-			display: inline-block;
-			height: 100vh;
-			width: 100vw;
-			position: absolute;
-			right: 0;
-			@include wrapper;
+				
+			h1, p {
+				color: $color-p-ultra;
+			}
+		}
+
+		div.right {
+			background-color: $color-white;
 
 			div.container {
-				height: 555px;
-				left: 0;
-				overflow: auto;
-				padding: $main-padding;
-				position: absolute;
-				width: 67%;
-				
-				h4, p {
-					color: $color-p-ultra;
-					padding: 0.9375rem 0.125rem;
-				}
-			}
-
-			img.about {
-				bottom: 20px;
-				max-width: 400px;
-				position: absolute;
-				right: 0;
+				padding-left: $main-padding;
+				height: auto;
+				width: 90%;
 			}
 		}
 	}
+
+	img.about {
+		bottom: 20px;
+	    max-width: 250px;
+	    position: absolute;
+	    left: calc(#{$main-padding} - 20px);
+	}
 }
+
+

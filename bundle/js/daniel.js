@@ -14,25 +14,73 @@ function slideIn(object) {
 introFade('.fade'); // run fade animation
 
 //  Flux transitional effects -----
-//  --- to BLUE (R to L)
+//  --- to BLUE (full)
 $('a.flux.blue').click( function(e) {
   e.preventDefault();
   var link = $(this);
-  $('.fade').fadeOut( function() {
-    $('div.blue').animate({width:'100vw'}, 500, function() {
-      document.location = link.attr('href');
-    });
-  });
+  if ($(window).width() < 1171) { // mobile
+    $('.fade').fadeOut( function() {
+      $('div.blue-mobile').animate({height:'100vw'}, 500, function() {
+        document.location = link.attr('href');
+      })
+    })
+  } else { // not mobile
+    $('.fade').fadeOut( function() {
+      $('div.blue').animate({width:'100vw'}, 500, function() {
+        document.location = link.attr('href');
+      })
+    })
+  }
 })
-//  --- to WHITE (L to R)
-$('a.flux.white').click( function(e) {
+//  --- to WHITE+BLUE (half)
+$('a.flux.white-blue').click( function(e) {
   e.preventDefault();
   var link = $(this);
-  $('.fade').fadeOut( function() {
-    $('div.white').animate({width:'50vw'}, 500, function() {
-      document.location = link.attr('href');
-    });
-  });
+  if ($(window).width() < 1171) { // mobile
+    $('div.blue-mobile').css("top", "0");
+    $('div.white-mobile').css("top", "0");
+    $('.fade').fadeOut( function() {
+      $('div.blue-mobile').animate({height:'0vh'}, 500, function() {
+        $('div.white-mobile').animate({height:'50vh'}, 500, function() {
+          document.location = link.attr('href');
+        })
+      })
+    })
+  } else { // not mobile
+    $('div.blue').css("left", "0");
+    $('div.white').css("left", "0");
+    $('.fade').fadeOut( function() {
+      $('div.blue').animate({width:'100vw'}, 500, function() {
+        $('div.white').animate({width:'50vw'}, 500, function() {
+          document.location = link.attr('href');
+        })
+      })
+    })
+  }
+})
+//  --- to BLUE+WHITE (half)
+$('a.flux.blue-white').click( function(e) {
+  e.preventDefault();
+  var link = $(this);
+  if ($(window).width() < 1171) { // mobile 
+    $('.fade').fadeOut( function() {
+      $('div.blue-mobile').animate({height:'100vw'}, 500, function() {
+        $('div.white-mobile').animate({height:'50vw'}, 500, function() {
+          document.location=link.attr('href');
+        })
+      })
+    })
+  } else {
+    $('div.blue').css("right", "0");
+    $('div.white').css("right", "0");
+    $('.fade').fadeOut( function() {
+      $('div.blue').animate({width:'100vw'}, 500, function() {
+        $('div.white').animate({width:'50vw'}, 500, function() {
+          document.location=link.attr('href');
+        })
+      })
+    })
+  }
 })
 
 });

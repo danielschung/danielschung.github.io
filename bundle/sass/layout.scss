@@ -3,7 +3,6 @@ $main-padding: 4.375rem;
 html {
 	background-color: $color-off-white;
   font-size: 16px;
-  overflow: hidden;
 }
 
 ::selection {
@@ -58,6 +57,7 @@ div.wrapper {
 }
 
 div.container {
+  box-sizing: border-box;
   z-index: 2;
   @include vertical-center;
 }
@@ -67,7 +67,7 @@ div.blue {
   position: fixed;
   height: 100vh;
   width: 0;
-  right:0;
+  right: 50vw;
   bottom:0;
   z-index: 1;
 }
@@ -77,8 +77,26 @@ div.white {
   position: fixed;
   height: 100vh;
   width: 0;
-  left:0;
+  right: 50vw;
   bottom:0;
+  z-index: 1;
+}
+
+div.blue-mobile {
+  background-color: $color-p-dark;
+  position: fixed;
+  height: 0;
+  width: 100vw;
+  bottom: 0;
+  z-index: 1;
+}
+
+div.white-mobile {
+  background-color: $color-off-white;
+  position: fixed;
+  height: 0;
+  width: 100vw;
+  bottom: 0;
   z-index: 1;
 }
 
