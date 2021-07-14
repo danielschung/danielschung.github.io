@@ -6,12 +6,29 @@ nav	{
   padding: 2rem 1.875rem;
   z-index: 100;
 
-  img.close {
-    width:20px;
-    height:20px;
+  div.close {
+    height: 20px;
+    width: 20px;
     top: 30px;
     position: absolute;
     right: 95px;
+
+    div {
+      border-radius: 3px;
+      background-color: $color-black;
+      height: 2.5px;
+      width: 23px;
+      position: absolute;
+      top: 45%;
+      left: -1.7px;
+      right: 0;
+    }
+    div:nth-child(1) {
+      transform: rotate(45deg);
+    }
+    div:nth-child(2) {
+      transform: rotate(135deg);
+    }
   }
 }
 
@@ -36,5 +53,14 @@ nav	{
 p.name { @include p-name; }
 p.job { @include p-job; }
 
-nav.light p.name { color: $color-off-white; }
-nav.light p.job { color: $color-off-white; }
+// Work page
+body.work nav {
+  div.close div { background-color: $color-off-white; }
+}
+
+// About page
+body.about nav {
+  p.name { color: $color-off-white; }
+  p.job { color: $color-off-white; }
+  div.close div { background-color: $color-p-dark; }
+}

@@ -38,6 +38,9 @@
 			width: 100%;
 		}
 	}
+	body.about nav div.close div {
+		background-color: $color-white;
+	}
 }
 
 @media only screen and (max-width:600px) { // all mobile
@@ -51,24 +54,20 @@
 	body.home section.intro div.left div.container {
 		padding-right: 1.875rem;
 	}
-	body.home section.intro div.right div.container a.flux:nth-child(1) {
+	body.home section.intro div.right div.container a.flux.work {
 		left: 1.875rem;
 	}
-	body.home section.intro div.right div.container a.flux:nth-child(2) {
+	body.home section.intro div.right div.container a.flux.about {
 		right: 1.875rem;
 	}
 }
 
 @media only screen and (max-width:412px) { // smaller mobile 
-	// body.home section.intro div.left div.container {
-	// 	position: absolute;
-	// 	bottom: 0;
-	// }
 	body.home section.intro div.right div.container.links {
 		top: 5.5rem;
 	}
-	body.home section.intro div.right div.container a.flux:nth-child(1),
-	body.home section.intro div.right div.container a.flux:nth-child(2) {
+	body.home section.intro div.right div.container a.flux.work,
+	body.home section.intro div.right div.container a.flux.about {
 		position: relative;
 		display: block;
 		left: 1.875rem;

@@ -41,12 +41,12 @@ body.home {
 					cursor: pointer;
 				}
 
-				a.flux:nth-child(1) {
+				a.flux.work {
 					position: absolute;
 					left: $main-padding;
 				}
 
-				a.flux:nth-child(2) {
+				a.flux.about {
 					position: absolute;
 					right: $main-padding;
 				}

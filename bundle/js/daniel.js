@@ -13,6 +13,14 @@ function slideIn(object) {
 
 introFade('.fade'); // run fade animation
 
+//  Control -----
+function initMobileComponents(object) {
+  if ($(window).width() < 1171) {
+    $('.not-mobile').hide();
+    $('.only-mobile').show();
+  }
+}
+
 //  Flux transitional effects -----
 //  --- to BLUE (full)
 $('a.flux.blue').click( function(e) {
@@ -82,5 +90,7 @@ $('a.flux.blue-white').click( function(e) {
     })
   }
 })
+
+initMobileComponents();
 
 });
