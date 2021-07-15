@@ -122,6 +122,10 @@ $tiempos-text: 'tiempos-text', 'garamond', 'sans-serif';
   font-size: 1.3rem;
 }
 
+@mixin li {
+  @include p;
+}
+
 // call mixins
 
 h1 { @include h1; }
@@ -134,6 +138,7 @@ p { @include p; }
 a.social { @include a-social; }
 a.social:hover { color: $color-accent; }
 a.flux { @include a-flux; }
+li { @include li; }
 // strong { @include strong; }
 // .subhead { @include subhead; }
 p.large { @include p-large; }

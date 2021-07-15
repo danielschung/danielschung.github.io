@@ -5,11 +5,14 @@ nav	{
 	position: fixed;
   padding: 2rem 1.875rem;
   z-index: 100;
+  // background-color: $color-white;
+  // -webkit-box-shadow: 0px 7px 37px -11px #000000; 
+  // box-shadow: 0px 7px 37px -11px #000000;
 
   div.close {
     height: 20px;
     width: 20px;
-    top: 30px;
+    top: 34px;
     position: absolute;
     right: 95px;
 
@@ -63,4 +66,11 @@ body.about nav {
   p.name { color: $color-off-white; }
   p.job { color: $color-off-white; }
   div.close div { background-color: $color-p-dark; }
+}
+
+// Case pages
+body.case nav {
+  p.name { color: $color-off-white; }
+  p.job { color: $color-off-white; }
+  div.close div { background-color: $color-off-white; }
 }
