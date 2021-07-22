@@ -122,6 +122,13 @@ $tiempos-text: 'tiempos-text', 'garamond', 'sans-serif';
   font-size: 1.3rem;
 }
 
+@mixin p-small-caption {
+  font-family: $tiempos-text;
+  font-size: 0.9rem;
+  line-height: 150%;
+  letter-spacing: 5%;
+}
+
 @mixin li {
   @include p;
 }
@@ -134,6 +141,7 @@ h3 { @include h3; }
 h4 { @include h4; }
 p.large-caption { @include p-large-caption; }
 p.xlarge-caption { @include p-xlarge-caption; }
+p.small-caption { @include p-small-caption; }
 p { @include p; }
 a.social { @include a-social; }
 a.social:hover { color: $color-accent; }

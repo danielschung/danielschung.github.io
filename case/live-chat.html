@@ -37,18 +37,18 @@
     <h2 class="first">Objective</h2>
     <p class="large">To create a chat solution on Health Alliance's primary shopping site to allow customer interfacing with the sales team. To assist in the conversion of prospects and help acquire lead data into Salesforce.</p>
     <h2>The Problem</h2>
-    <p>Shopping for health insurance plans is very confusing. The complex nature of differing plan information often invites users to try to bypass the digital experience and speak to a representative directly. On top of that, our process for connecting with a sales representative was archaic. As questions submitted through forms went long unanswered and as phone lines became more congested, we saw an overwhelming number of shoppers abandon our page for our competitors. We determined that a live chat feature was an elegant way to immediately address these issues.</p>
+    <p>Shopping for health insurance plans is very confusing. The complex nature of differing plan information often invites users to try to bypass the digital experience and speak to a representative directly. On top of that, our process for connecting with a sales representative was archaic. As questions submitted through forms went long unanswered and as phone lines became more congested, we saw an overwhelming number of shoppers abandon our page. We determined that a live chat feature was an elegant way to immediately address these issues.</p>
     <h2>Research & Analysis</h2>
-    <p>To get an idea of the industry standard, I started by observing various chat interfaces from a few digital front-door competitors including BlueCross BlueShield, Home Depot, and (insert one more).</p>
+    <p>To get an idea of the industry standard, I started by observing various chat interfaces from a few digital front-door competitors including BlueCross BlueShield, Depot, and (insert one more).</p>
     <h3>Insights</h3>
     <ul>
       <li><strong>BlueCross BlueShield - </strong>Used a virtual assisant named "Ask Ivy." The technology was smart and recognized text based input, routing the user to knowedge pages throughout the site. Yet Ivy had a difficult time answering specific questions since no direct human chat could be initiated.</li>
-      <li><strong>Home Depot - </strong>Home Depot's chat started with an automated triage to get a general idea of what the user was looking for, then a direct chat with a human representative was established. This felt like a solution that would fit our needs. But the chat window itself was minimal and lacked elegance in the design.</li>
+      <li><strong>Home Depot - </strong>Home Depot's chat started with an automated triage to get a general idea of what the user was looking for, then a direct chat with a human representative was established. This felt like a good solution, but the chat experience was minimal and lacked elegance in the design.</li>
     </ul>
     <h3>Direction</h3>
-    <p>Based on this initial discovery, I determined that the personalized <strong>virtual assistant</strong> which eventually made a connection with a <strong>human representative</strong> felt like the best solution for our needs. The chat would also need a more <strong>elegant design</strong> that you would expect from a credible shopping tool.</p>
+    <p>Based on this initial discovery, I determined that a virtual assistant which eventually made a connection with a human representative felt like the best solution for our needs. The chat would also need a more elegant kind of design that you would expect from a credible shopping tool.</p>
     <h2>Synthesis</h2>
-    <p>Because the initial problem involved increasing sales, we determined that creating a <strong>Salesforce Lightning app</strong> to tie in lead data and store chats would be ideal. We pulled in a few internal Lightning developers to see what we could come up with. We learned that they had previously created a chat for internal use a few months prior, so the plan was to use the functionality of their app and build out a better front-end.</p>
+    <p>Because the initial problem involved increasing sales, we determined that creating a <strong>Salesforce Lightning app</strong> to tie in lead data and store chats would be ideal. We pulled in a few internal Lightning developers to see what we could come up with. We learned that they had previously created a chat for internal use a few months prior, so the plan was to use the functionality of their app and build out a more polished front-end.</p>
     <h3>Design and Integration</h3>
     <p>I would be the one to work out the UX for the front-end of the chat, and work alongside a few developers to set up the integration and API to pass the desired user data to Salesforce.</p>
     <h2>Requirements</h2>
@@ -56,14 +56,35 @@
     <h3>Roadblock</h3>
     <p>The sales team requested that we gather the user's name, email, zipcode, county, and permission to be sent additional marketing materials for medicare products in the future.</p>
     <p>In an effort to avoid bombarding the user with personal questions upon initiating the chat, I spent some time figuring out how to get these crucial datapoints to the sales team in a way that didn't sacrifice the user experience.</p>
-    <h2>Bringing It All Together</h2>
-    <p>I pulled together initial flows and wireframes for the chat bearing in mind a primary question: "How can we make an impersonal data gathering sequence feel smooth and unobtrusive?"</p>
+    <h2>Working Out the Design</h2>
+    <p>I pulled together initial flows and wireframes for the chat bearing in mind a primary question: <strong>"How can we make an impersonal lead data gathering sequence feel smooth and unobtrusive?"</strong></p>
   </div>
   <div class="wrapper fade image">
-    <img src="../bundle/media/images/sales-chat-userflow-1.png">
+    <img src="../bundle/media/images/sales-chat/userflow-1.png">
   </div>
   <div class="wrapper fade">
-    <p>The results of this experiment led to another question, "What are the pieces of a chat that are crucial to a great experience?"</p>
+    <p>The next question to ask was, <strong>what pieces of a chat are crucial to a great experience?</strong></p>
+  </div>
+  <div class="wrapper fade image">
+    <img src="../bundle/media/images/sales-chat/wireframe-1.png">
+  </div>
+  <div class="wrapper fade image">
+    <img src="../bundle/media/images/sales-chat/wireframe-2.png">
+  </div>
+  <div class="wrapper fade image">
+    <img src="../bundle/media/images/sales-chat/wireframe-3.png">
+  </div>
+  <div class="wrapper fade">
+    <p>After a number of design iterations, I coded up a prototype that tied everything together and showed how the chat interactions would work. I held a number of sessions with key stakeholders to show my work and showcase the solutions <a href="https://dchunkz.github.io/saleschat-prototype/" target="non">(view prototype).</a></p>
+  </div>
+  <div class="wrapper fade image">
+    <video width="100%" controls>
+      <source src="../bundle/media/images/sales-chat/video.webm" type="video/webm">
+    </video>
+  </div>
+  <div class="wrapper fade"></div>
+    <h2>Development</h2>
+    <p>I led a number of group discussions with the development team to ensure that all requirements for the chat were being met, and acted as the point of contact across the sales, marketing, Salesforce, and digital teams. We tested the chat in two weeks, and launched the chat to production at the end of July.</p>
   </div>
 </section>
 
