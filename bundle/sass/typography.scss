@@ -97,6 +97,27 @@ $tiempos-text: 'tiempos-text', 'garamond', 'sans-serif';
   text-transform: uppercase;
 }
 
+@mixin a-link {
+  @include hover;
+  border: 1px solid $color-p-dark;
+  border-radius: 4px;
+  color: $color-p-dark;
+  display: inline-block;
+  font-family: $gilroy-regular;
+  font-size: 0.875rem;
+  line-height: 120%;
+  margin-top: 1rem;
+  padding: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+@mixin a-link-hover {
+  @include a-link;
+  background-color: $color-p-dark;
+  color: $color-white;
+}
+
 @mixin a-flux {
   @include a-social;
   font-size: 1.5625rem;
@@ -146,6 +167,9 @@ p { @include p; }
 a.social { @include a-social; }
 a.social:hover { color: $color-accent; }
 a.flux { @include a-flux; }
+a.link { @include a-link; }
+a.link:hover { @include a-link-hover; }
+a.link:pressed { @include a-link-hover; }
 li { @include li; }
 // strong { @include strong; }
 // .subhead { @include subhead; }

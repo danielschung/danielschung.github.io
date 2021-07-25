@@ -1,0 +1,24 @@
+@import 'layout';
+
+// Case Study Footer
+body.case footer {
+  background-color: $color-p-dark;
+  padding: 3rem 0;
+
+  div.wrapper {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  a.flux {
+    color: $color-white;
+  }
+
+  a.previous {
+    float: left;
+  }
+
+  a.next {
+    float:right;
+  }
+}

@@ -63,6 +63,12 @@ body.case {
 				margin-top: 0.7rem;
 				text-align: center;
 			}
+
+			video {
+				border-radius: 0;
+				outline: none;
+				border: none;
+			}
 		}
 	}
 }
