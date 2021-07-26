@@ -7,11 +7,11 @@ sass --watch bundle/sass/export.scss:bundle/daniel.css --style compressed
 @import 'colors';
 @import 'typography';
 @import 'layout';
-@import 'mobile';
 @import 'nav';
 @import 'home';
 @import 'work';
 @import 'case';
 @import 'about';
+@import 'mobile';
 @import 'glitch';
 @import 'footer';
