@@ -45,7 +45,7 @@
 
 @media only screen and (max-width:600px) { // all mobile
 	html {
-	  font-size: 12px;
+	  font-size: 12px !important;
 	}
 	body.home section.intro div.right,
 	body.home section.intro div.left {
@@ -59,6 +59,9 @@
 	}
 	body.home section.intro div.right div.container a.flux.about {
 		right: 1.875rem;
+	}
+	body.case div.wrapper {
+		padding: 10rem 1.875rem 5rem 1.875rem;
 	}
 }
 
