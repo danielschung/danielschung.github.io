@@ -94,7 +94,7 @@ $('a.flux.blue-white').click( function(e) {
 //  Nav rules -----
 function navDark(){
   // $('nav').fadeOut(200).toggleClass('dark').fadeIn(200);
-  $('nav').fadeOut(177, function() {
+  $('nav').fadeOut( 177, function() {
     $('nav').fadeIn(177).toggleClass('dark');
   })
 }
