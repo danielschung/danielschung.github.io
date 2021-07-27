@@ -11,35 +11,40 @@
 	}
 	body.about section.intro div.left {
 		position: relative;
-		height: auto;
+		height: 50vh;
 		padding: $main-padding;
 
 		div.container {
 			position: relative;
-			transform: translateY(0rem);
-			margin-top: 17%;
+			padding-right: 0;
 		}
 		img.about {
-			bottom: 0;
-			left: -1.2rem;
+			bottom: $main-padding;
+			left: $main-padding;
 			margin-top: 3rem;
-			position: relative;
+			position: absolute;
 		}
 	}
 	body.about section.intro div.right {
 		position: relative;
-		height: auto;
+		height: 50vh;
 		padding: $main-padding;
 
 		div.container {
 			position: relative;
-			transform: translateY(0);
 			padding: 0;
 			width: 100%;
 		}
 	}
 	body.about nav div.close div {
 		background-color: $color-white;
+	}
+}
+
+@media only screen and (max-width:769px) { // iPad
+	body.about section.intro div.left,
+	body.about section.intro div.right {
+		height: 100vh;
 	}
 }
 
@@ -65,24 +70,35 @@
 	}
 }
 
-@media only screen and (max-width:412px) { // smaller mobile 
-	body.home section.intro div.right div.container.links {
-		top: 5.5rem;
-	}
-	body.home section.intro div.right div.container a.flux.work,
-	body.home section.intro div.right div.container a.flux.about {
-		position: relative;
-		display: block;
-		left: 1.875rem;
-		margin-bottom: 1.5rem;
-	}
-}
+// @media only screen and (max-width:412px) { // smaller mobile 
+
+// }
 
 @media only screen and (max-width:320px) { // xsmall mobile
-	body.home section.intro div.left {
-		height: 60vh;
+	html {
+		font-size: 10px !important;
 	}
-	body.home section.intro div.right {
-		height: 40vh;
+	body.about section.intro div.left {
+		height: 100vh;
+		padding-bottom: 7rem;
+
+		img.about {
+			position: absolute;
+			width: 70%;
+			top: 2rem;
+		}
+		div.container {
+			position: relative;
+			margin-top: 12rem;
+		}
+	}
+	body.about section.intro div.right {
+		height: auto;
+		padding-bottom: 7rem;
+
+		div.container {
+			// margin-top: 7rem;
+			transform: translateY(10%);
+		}
 	}
 }

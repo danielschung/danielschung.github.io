@@ -15,8 +15,17 @@ introFade('.fade'); // run fade animation
 
 //  Control -----
 function initMobileComponents(object) {
-  if ($(window).width() < 1171) {
-    $('.not-mobile').hide();
+  if ($(window).width() >= 1170) {
+    $('.only-mobile').hide();
+    $('.only-tablet').hide();
+    $('.only-desktop').show();
+  } else if ($(window).width() >= 769 && $(window).width() <= 1170) {
+    $('.only-desktop').hide();
+    $('.only-mobile').hide();
+    $('.only-tablet').show();
+  } else if ($(window).width() < 769) {
+    $('.only-desktop').hide();
+    $('.only-tablet').hide();
     $('.only-mobile').show();
   }
 }
@@ -28,7 +37,7 @@ $('a.flux.blue').click( function(e) {
   var link = $(this);
   if ($(window).width() < 1171) { // mobile
     $('.fade').fadeOut( function() {
-      $('div.blue-mobile').animate({height:'100vw'}, 500, function() {
+      $('div.blue-mobile').animate({height:'100vh'}, 500, function() {
         document.location = link.attr('href');
       })
     })
@@ -48,7 +57,7 @@ $('a.flux.white-blue').click( function(e) {
     $('div.blue-mobile').css("top", "0");
     $('div.white-mobile').css("top", "0");
     $('.fade').fadeOut( function() {
-      $('div.blue-mobile').animate({height:'0vh'}, 500, function() {
+      $('div.blue-mobile').animate({height:'100vh'}, 500, function() {
         $('div.white-mobile').animate({height:'50vh'}, 500, function() {
           document.location = link.attr('href');
         })
@@ -72,7 +81,7 @@ $('a.flux.blue-white').click( function(e) {
   var link = $(this);
   if ($(window).width() < 1171) { // mobile 
     $('.fade').fadeOut( function() {
-      $('div.blue-mobile').animate({height:'100vw'}, 500, function() {
+      $('div.blue-mobile').animate({height:'100vh'}, 500, function() {
         $('div.white-mobile').animate({height:'50vw'}, 500, function() {
           document.location=link.attr('href');
         })
@@ -99,14 +108,14 @@ function navDark(){
   })
 }
 
-var waypoint = new Waypoint({
-  element: document.getElementById('dark-nav'),
-  handler: function() {
-    navDark();
-    console.log('Basic waypoint triggered');
+// var waypoint = new Waypoint({
+//   element: document.getElementById('dark-nav'),
+//   handler: function() {
+//     navDark();
+//     console.log('Basic waypoint triggered');
 
-  }
-})
+//   }
+// })
 
 initMobileComponents();
 
