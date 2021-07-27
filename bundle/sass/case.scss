@@ -31,7 +31,7 @@ body.case {
 			color: $color-off-white;
 		}
 
-		img {
+		img, iframe {
 			width: 100%;
 		}
 	}
@@ -50,6 +50,11 @@ body.case {
 
 			h3 {
 				margin-top: 2rem;
+			}
+
+			img {
+				padding: 2rem 0;
+				width: 100%;
 			}
 		}
 

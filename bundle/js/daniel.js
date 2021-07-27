@@ -108,14 +108,13 @@ function navDark(){
   })
 }
 
-// var waypoint = new Waypoint({
-//   element: document.getElementById('dark-nav'),
-//   handler: function() {
-//     navDark();
-//     console.log('Basic waypoint triggered');
-
-//   }
-// })
+var waypoint = new Waypoint({
+  element: document.getElementById('dark-nav'),
+  handler: function() {
+    navDark();
+    console.log('Basic waypoint triggered');
+  }
+})
 
 initMobileComponents();
 

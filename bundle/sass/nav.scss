@@ -51,6 +51,12 @@ nav	{
 p.name { @include p-name; }
 p.job { @include p-job; }
 
+@mixin nav-dark {
+  p.name { color: $color-p-dark; }
+  p.job { color: $color-p-dark; }
+  div.close div { background-color: $color-p-dark; }
+}
+
 // Work page
 body.work nav {
   div.close div { background-color: $color-off-white; }
@@ -62,6 +68,9 @@ body.about nav {
   p.job { color: $color-off-white; }
   div.close div { background-color: $color-p-dark; }
 }
+body.about nav.dark {
+  @include nav-dark;
+}
 
 // Case pages
 body.case nav {
@@ -70,7 +79,5 @@ body.case nav {
   div.close div { background-color: $color-off-white; }
 }
 body.case nav.dark {
-  p.name { color: $color-p-dark; }
-  p.job { color: $color-p-dark; }
-  div.close div { background-color: $color-p-dark; }
+  @include nav-dark;
 }
