@@ -59,7 +59,7 @@ div.wrapper {
 
 div.container {
   box-sizing: border-box;
-  // z-index: 2;
+  z-index: 2;
   @include vertical-center;
 }
 
