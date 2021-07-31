@@ -39,6 +39,9 @@
 	body.about nav div.close div {
 		background-color: $color-white;
 	}
+	body.case nav.dark {
+		background-color: $color-white;
+	}
 }
 
 @media only screen and (max-width:769px) { // iPad

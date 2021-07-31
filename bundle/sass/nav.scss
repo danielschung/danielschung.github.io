@@ -2,10 +2,10 @@
 
 nav	{
   box-sizing: border-box;
-  padding: 1.5rem;
+  padding: 1rem 1.5rem;
   position: fixed;
   width: 100%;
-  z-index: 100;
+  z-index: 3;
 
   div.close {
     height: 1.25rem;
@@ -33,7 +33,7 @@ nav	{
 }
 
 @mixin p-name {
-  color: $color-p-dark;
+  color: $color-off-white;
   font-family: $gilroy-bold;
   font-size: 1.125rem;
   line-height: 120%;
@@ -41,7 +41,7 @@ nav	{
 }
 
 @mixin p-job {
-  color: $color-black;
+  color: $color-off-white;
   font-family: $gilroy-light;
   font-size: 1.0625rem;
   line-height: 120%;
