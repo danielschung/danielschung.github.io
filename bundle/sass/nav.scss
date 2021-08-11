@@ -5,7 +5,7 @@ nav	{
   padding: 1rem 1.5rem;
   position: fixed;
   width: 100%;
-  z-index: 3;
+  z-index: 4;
 
   div.close {
     height: 1.25rem;
@@ -57,8 +57,15 @@ p.job { @include p-job; }
   div.close div { background-color: $color-p-dark; }
 }
 
+// Home page
+body.home nav {
+  p.name { color: $color-p-dark; }
+  p.job { color: $color-p-dark; }
+}
+
 // Work page
 body.work nav {
+  height: 4rem;
   div.close div { background-color: $color-off-white; }
 }
 
