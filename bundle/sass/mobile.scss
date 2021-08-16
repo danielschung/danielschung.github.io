@@ -1,12 +1,12 @@
 @media only screen and (max-width:1170px) { // smaller browser
 	body.home section.intro div.left {
 		top:0;
-		height: 50vh;
+		height: 50%;
 		width: 100vw;
 	}
 	body.home section.intro div.right {
 		bottom:0;
-		height: 50vh;
+		height: 50%;
 		width: 100vw;
 	}
 	body.about section.intro div.left {
@@ -61,6 +61,7 @@
 	}
 	body.home section.intro div.left div.container {
 		padding-right: 1.875rem;
+		top: 52%;
 	}
 	body.home section.intro div.right div.container a.flux.work {
 		left: 1.875rem;
