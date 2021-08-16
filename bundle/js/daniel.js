@@ -120,3 +120,5 @@ initMobileComponents();
 
 
 });
+
+window.onresize = function(){ location.reload(); }
