@@ -52,14 +52,14 @@ p.name { @include p-name; }
 p.job { @include p-job; }
 
 @mixin nav-dark {
-  // background-color: $color-p-dark;
+  background-color: $color-p-dark;
   p.name { color: $color-off-white; }
   p.job { color: $color-off-white; }
   div.close div { background-color: $color-off-white; }
 }
 
 @mixin nav-light {
-  // background-color: $color-white;
+  background-color: $color-off-white;
   p.name { color: $color-p-dark; }
   p.job { color: $color-p-dark; }
   div.close div { background-color: $color-p-dark; }
