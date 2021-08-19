@@ -2,7 +2,7 @@
 
 nav	{
   box-sizing: border-box;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1.9rem;
   position: fixed;
   width: 100%;
   z-index: 4;
@@ -52,8 +52,22 @@ p.name { @include p-name; }
 p.job { @include p-job; }
 
 @mixin nav-dark {
+  // background-color: $color-p-dark;
+  p.name { color: $color-off-white; }
+  p.job { color: $color-off-white; }
+  div.close div { background-color: $color-off-white; }
+}
+
+@mixin nav-light {
+  // background-color: $color-white;
   p.name { color: $color-p-dark; }
   p.job { color: $color-p-dark; }
+  div.close div { background-color: $color-p-dark; }
+}
+
+@mixin nav-split {
+  p.name { color: $color-off-white; }
+  p.job { color: $color-off-white; }
   div.close div { background-color: $color-p-dark; }
 }
 
@@ -71,20 +85,16 @@ body.work nav {
 
 // About page
 body.about nav {
-  p.name { color: $color-off-white; }
-  p.job { color: $color-off-white; }
-  div.close div { background-color: $color-p-dark; }
+  @include nav-split;
 }
-body.about nav.dark {
-  @include nav-dark;
+body.about nav.light {
+  @include nav-light;
 }
 
 // Case pages
 body.case nav {
-  p.name { color: $color-off-white; }
-  p.job { color: $color-off-white; }
-  div.close div { background-color: $color-off-white; }
-}
-body.case nav.dark {
   @include nav-dark;
+}
+body.case nav.light {
+  @include nav-light;
 }

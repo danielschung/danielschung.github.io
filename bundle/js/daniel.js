@@ -7,11 +7,18 @@ function introFade(object) {
   $(object).fadeTo(977, 1, 'swing');
 }
 
+function lateFade(object) {
+  $(object).fadeIn(1000);
+  $(object).delay(600).css('opacity','0');
+  $(object).fadeTo(977, 1, 'swing');
+}
+
 function slideIn(object) {
   $(object).animate({right:'0'}, 300);
 }
 
 introFade('.fade'); // run fade animation
+lateFade('.late-fade'); //run later fade animation
 
 //  Control -----
 function initMobileComponents(object) {
@@ -36,13 +43,13 @@ $('a.flux.blue').click( function(e) {
   e.preventDefault();
   var link = $(this);
   if ($(window).width() < 1171) { // mobile
-    $('.fade').fadeOut( function() {
+    $('.fade, .late-fade').fadeOut( function() {
       $('div.blue-mobile').animate({height:'100vh'}, 500, function() {
         document.location = link.attr('href');
       })
     })
   } else { // not mobile
-    $('.fade').fadeOut( function() {
+    $('.fade, .late-fade').fadeOut( function() {
       $('div.blue').animate({width:'100vw'}, 500, function() {
         document.location = link.attr('href');
       })
@@ -56,7 +63,7 @@ $('a.flux.white-blue').click( function(e) {
   if ($(window).width() < 1171) { // mobile
     $('div.blue-mobile').css("top", "0");
     $('div.white-mobile').css("top", "0");
-    $('.fade').fadeOut( function() {
+    $('.fade, .late-fade, .light').fadeOut( function() {
       $('div.blue-mobile').animate({height:'100vh'}, 500, function() {
         $('div.white-mobile').animate({height:'50vh'}, 500, function() {
           document.location = link.attr('href');
@@ -66,7 +73,7 @@ $('a.flux.white-blue').click( function(e) {
   } else { // not mobile
     $('div.blue').css("left", "0");
     $('div.white').css("left", "0");
-    $('.fade').fadeOut( function() {
+    $('.fade, .late-fade').fadeOut( function() {
       $('div.blue').animate({width:'100vw'}, 500, function() {
         $('div.white').animate({width:'50vw'}, 500, function() {
           document.location = link.attr('href');
@@ -80,7 +87,7 @@ $('a.flux.blue-white').click( function(e) {
   e.preventDefault();
   var link = $(this);
   if ($(window).width() < 1171) { // mobile 
-    $('.fade').fadeOut( function() {
+    $('.fade, .late-fade').fadeOut( function() {
       $('div.blue-mobile').animate({height:'100vh'}, 500, function() {
         $('div.white-mobile').animate({height:'50vw'}, 500, function() {
           document.location=link.attr('href');
@@ -90,7 +97,7 @@ $('a.flux.blue-white').click( function(e) {
   } else {
     $('div.blue').css("right", "0");
     $('div.white').css("right", "0");
-    $('.fade').fadeOut( function() {
+    $('.fade, .late-fade').fadeOut( function() {
       $('div.blue').animate({width:'100vw'}, 500, function() {
         $('div.white').animate({width:'50vw'}, 500, function() {
           document.location=link.attr('href');
@@ -101,16 +108,16 @@ $('a.flux.blue-white').click( function(e) {
 })
 
 //  Nav rules -----
-function navDark(){
-  $('nav').fadeOut( 177, function() {
-    $('nav').fadeIn(177).toggleClass('dark');
+function navSwitch(){
+  $('body.case nav').fadeOut( 177, function() {
+    $('body.case nav').fadeIn(177).toggleClass('light');
   })
 }
 
 var waypoint = new Waypoint({
-  element: document.getElementById('dark-nav'),
+  element: document.getElementById('switch-nav'),
   handler: function() {
-    navDark();
+    navSwitch();
     console.log('Basic waypoint triggered');
   }
 })
@@ -120,5 +127,3 @@ initMobileComponents();
 
 
 });
-
-// window.onresize = function(){ location.reload(); }
