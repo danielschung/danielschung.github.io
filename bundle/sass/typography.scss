@@ -112,6 +112,14 @@ $tiempos-text: 'tiempos-text', 'garamond', 'sans-serif';
   text-transform: uppercase;
 }
 
+@mixin a-document {
+  content: url(./media/icons/document.svg);
+  padding-left: 3px;
+  position: relative;
+  top: 3px;
+  width: 2px;
+}
+
 @mixin a-link-hover {
   @include a-link;
   background-color: $color-p-dark;
@@ -167,6 +175,7 @@ p.small-caption { @include p-small-caption; }
 p { @include p; }
 a.social { @include a-social; }
 a.social:hover { color: $color-accent; }
+a.document::after { @include a-document; }
 a.flux { @include a-flux; }
 a.link { @include a-link; }
 a.link:hover { @include a-link-hover; }
