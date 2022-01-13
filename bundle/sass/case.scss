@@ -1,82 +1,260 @@
 body.case {
-		
-	div.wrapper {
-		position: relative;
-		max-width: 900px;
-		margin: 0 auto;
-		padding-top: 10rem;
-		padding-bottom: 5rem;
+	header {
+		padding-top: 15.25rem;
+		padding-bottom: 2.5rem;
+		@extend .side-padding;
 	}
 
-	section h1,
-	section h2,
-	section h3,
-	section p,
-	section li {
-		margin-bottom: 1rem;
-	}
-
-	ul {
-		left: 1rem;
-		position: relative;
-		width: calc(100% - 1rem);
-	}
-
-	section.case-header {
-		background-color: $color-p-dark;
-
-		h1, p {
-			color: $color-off-white;
+	section.hero {
+		div.image {
+			@include thumbnail;
+			display:block;
 		}
 
-		img, iframe {
-			width: 100%;
+		div.info {
+			display: inline-block;
+			padding-top: 2.5rem;
+			padding-bottom: 3rem;
+			@extend .side-padding;
+			margin-right: 2.5rem;
+
+			p.overline {
+				background-color: $black;
+				color: $off-white;
+				display: inline-block;
+				padding: 0 5px;
+				text-transform: uppercase;
+			}
 		}
 	}
 
-	section.case-body {
+	.half {
+		padding-top: 6rem;
+		padding-bottom: 6rem;
+		@extend .side-padding;
 
-		div.wrapper {
-			padding-top: 5rem;
-
-			h2.first {
-				margin-top: 0;
-			}
-
-			h2 {
-				margin-top: 3rem;
-			}
-
-			h3 {
-				margin-top: 2rem;
-			}
-
-			img {
-				padding: 2rem 0;
-				width: 100%;
-			}
+		div:nth-child(1) {
+			float: left;
+			width: calc(50% - 4.5rem);
 		}
 
-		div.wrapper.image {
-			max-width: 1100px;
-			padding: 1rem 0;
+		div:nth-child(2) {
+			float: right;
+			width: calc(50% - 4.5rem);
+		}
 
-			img {
-				background-size: cover;
-				height: auto;
-				width: 100%;
-			}
+		span {
+			display: inline-block;
+			margin-bottom: 2.5rem;
+		}
+	}
 
-			p.small-caption {
-				margin-top: 0.7rem;
-				text-align: center;
-			}
+	aside {
+		padding-top: 5.5rem;
+		padding-bottom: 5.5rem;
+		@extend .side-padding;
 
-			video {
-				border-radius: 0;
-				outline: none;
-				border: none;
+		div.numbers {
+			margin-top: 4rem;
+		}
+
+		p.large span {
+			text-decoration: underline;
+			margin-bottom: 0;
+		}
+	}
+
+	aside.blue {
+		background-color: $blue;
+
+		h2 {
+			color: $white;
+		}
+
+		h2.accent {
+			color: $light-blue;
+		}
+
+		p.large {
+			color: $white;
+		}
+
+		h3 {
+			color: $white;
+		}
+	}
+
+	div.half {
+		padding: 0;
+	}
+
+	p.overline {
+		color: $blue;
+		display: inline-block;
+		text-transform: uppercase;
+	}
+
+	img {
+		width: 100%;
+	}
+}
+
+// specific case page rules
+
+@mixin persona {
+	background-repeat: no-repeat;
+	background-position: bottom;
+	background-size: 100% auto;
+	border-radius: 1000px;
+	display: block;
+	margin: 0 auto;
+}
+
+@mixin code-image-shadow {
+	-webkit-box-shadow: 0px 5px 20px 7px rgba(45,45,45,0.25); 
+	box-shadow: 0px 5px 20px 7px rgba(45,45,45,0.25);
+}
+
+body.case.soi {
+	section.hero {
+		div.image {
+			background-image: url('./media/rework-header.png');
+			background-color: $dark-blue;
+			height: 25rem;
+		}
+	}
+
+	aside {
+		background-color: $off-white;
+	}
+
+	section.personas {
+		padding-top: 6rem;
+		padding-bottom: 6rem;
+		@extend .side-padding;
+
+		div.heading {
+			position: relative;
+			display: inline-block;
+			left: 10%;
+		}
+
+		div.left {
+			float: left;
+			width: 37.5rem;
+		}
+
+		div.right {
+			float: right;
+			width: 35.75rem;
+			margin-top: 10rem;
+		}
+
+		img.clara {
+			height: auto;
+			max-width: 30.0625rem;
+			margin-top: 4rem;
+		}
+
+		img.rob {
+			height: auto;
+			max-width: 27.0625rem;
+		}
+	}
+
+	aside.visual {
+		background-color: $dark-blue;
+		padding: 6.75rem 8.84375rem;
+
+		h2 {
+			color: $off-white;
+		}
+
+		h2.accent {
+			color: $grey;
+		}
+
+		img {
+			margin-top: 2rem;
+		}
+	}
+
+	div.code-images {
+		padding-top: 4.5rem;
+
+		img:nth-child(1) {
+			width: calc(42.5% - 10px);
+			float:left;
+			height: 100%;
+			margin-bottom: 10px;
+			@include code-image-shadow;
+		}
+
+		img:nth-child(2) {
+			width: 57.5%;
+			float:right;
+			margin-bottom: 10px;
+			@include code-image-shadow;
+		}
+
+		img:nth-child(3) {
+			width: 57.5%;
+			float: right;
+			@include code-image-shadow;
+		}
+	}
+
+	aside.impact {
+		span.list p.large {
+			margin-bottom: 2rem;
+		}
+		span.lower {
+			margin-top: 180px;
+		}
+	}
+}
+
+body.case.virtual {
+	section.hero {
+		div.image {
+			background-image: url('./media/chat-header.png');
+			background-color: $off-white;
+			height: 41rem;
+			background-position: center;
+		}
+	}
+
+	aside.blue {
+		div.numbers {
+			margin-top: 0;
+
+			p.large::before {
+				color: $white;
+				border: 2px solid $white;
+				border-radius: 100px;
+				margin-right: 1.5rem;
+				@extend h4;
 			}
+		}
+		div.half:nth-child(1) {
+			margin-bottom: 4rem;
+		}
+	}
+
+	aside.prototype {
+		background-color: $dark-blue;
+		@extend .half;
+
+		h2 {
+			color: $white;
+		}
+
+		h2.accent {
+			color: $grey;
+		}
+
+		p.large {
+			color: $white;
 		}
 	}
 }

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../bundle/all.css">
+	<title>Case | Virtual Assistant</title>
+</head>
+<body class="case virtual">
+	<nav id="nav">
+		<div id="close" class="close">
+			<div class="line"></div>
+			<div class="line"></div>
+		</div>
+		<a class="title" href="./index.html">DANIEL S CHUNG</a>
+		<div class="links">
+			<a href="../index.html" class="active">Work</a>
+			<a href="../about.html">About</a>
+			<a href="../bundle/media/danielschung-resume.pdf" target="_blank">Resume</a>
+		</div>
+	</nav>
+
+	<div id="m-nav">
+		<div class="m-button">
+			<div class="line"></div>
+			<div class="line"></div>
+		</div>
+	</div>
+
+	<header>
+		<h1>Health Alliance Virtual Assistant</h1>
+		<h1 class="accent">Solving a digital experience problem.</h1>
+	</header>
+
+	<section class="hero">
+		<div class="image"></div>
+		<div class="info">
+			<p class="overline">Duration</p>
+			<p class="large">March - October 2021 (8 Months)</p>
+		</div>
+		<div class="info">
+			<p class="overline">Role</p>
+			<p class="large">PM, UXD</p>
+		</div>
+	</section>
+
+	<section class="half">
+		<div class="slide-up">
+			<h2>Why a virtual assistant?</h2>
+			<h2 class="accent">Frustrated shoppers would bypass our digital experience and seek to connect with a human representative.</h2>
+		</div>
+		<div>
+			<span class="slide-up">
+				<p class="title">The Problem</p>
+				<p class="large">Shopping for health insurance plans can be confusing, and we saw a large number of frustrated shoppers bypass our digital experience for service calls. Yet the process for connecting with a representative was archaic. Questions went long unanswered and phone lines become more congested. We determined that a live chat feature was an elegant way to immediately address a major digital experience issue.</p>
+			</span>
+			<span class="slide-up">
+				<p class="title">The Ask</p>
+				<p class="large">To create a chat solution on Health Alliance's primary shopping site to allow customer interfacing with the sales team. This would assist in the conversion of prospective customers and help acquire lead data into Salesforce.</p>
+			</span>
+		</div>
+		<div class="clear"></div>
+	</section>
+
+	<aside class="blue">
+		<div class="half">
+			<div>
+				<span class="slide-up">
+					<h2>Research and Analysis.</h2>
+					<h2 class="accent">Digital front-door competitor review.</h2>
+				</span>
+				<span class="slide-up">
+					<p class="large">To get an idea of the industry standard, I started by observing various chat interfaces from a few digital front-door competitors including BlueCross BlueShield and Home Depot.</p>
+				</span>
+			</div>
+			<div class="numbers">
+				<p class="large slide-up"><span>BlueCross Blue Shield</span>&nbsp;&nbsp;Used a virtual assistant named "Ask Ivy." The technology was smart and recognized text based input, routing the user to knowledge pages throughout the site. Yet Ivy had a difficult time answering specific questions since no direct human chat could be initiated.</p>
+				<p class="large slide-up"><span>Home Depot</span>&nbsp;&nbsp;Started with an automated triage to get a general idea of what the user was looking for, then a direct chat with a human representative was established. This felt like a good solution, but the chat experience was minimal and lacked elegance in the design.</p>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="half">
+			<div class="slide-in">
+				<h3>Product Vision</h3>
+				<p class="large ">Based on our findings, we determined that a <strong>virtual assistant</strong> which eased the user into a connection with a <strong>human representative</strong> felt like the best solution for our needs. The chat  also needed to have an <strong>elegant design</strong> that you would expect from a credible shopping tool.</p>
+			</div>
+			<div></div>
+			<div class="clear"></div>
+		</div>
+	</aside>
+
+	<section class="half">
+		<div></div>
+		<div>
+			<span>
+				<h2 class="slide-up">Initial Discovery.</h2>
+				<h2 class="accent slide-up">Investigating our options.</h2>
+			</span>
+			<span class="slide-up">
+				<p class="large">To increase sales, we thought a Salesforce Lightning app would serve well to acuire lead data and store chats on the back-end. We consulted a few internal Lightning developers to see what was possible. The plan was to build a Lightening app, set up the piplines to pass desired user data via API call, and build out a polished front-end.</p>
+			</span>
+			<span class="slide-up">
+				<p class="large">Over the next few weeks I mapped out the product requirements with stakeholders and developers, establishing vision and communicating everything across the board. The plan was received well, and we pulled together an initial roadmap to hit production in 3 months or less.</p>
+			</span>
+		</div>
+		<div class="clear"></div>
+	</section>
+
+	<section class="half">
+		<div>
+			<h2 class="slide-up">Challenges.</h2>
+			<h2 class="accent slide-up">Solving problems with design-thinking.</h2>
+		</div>
+		<div>
+			<span class="slide-up">
+				<p class="title">User Data</p>
+				<p class="large">The Sales team requested later that we gather the user's name, email, zipcode, county, as well as a permission checkbox to send the user additional marketing materials for medicare products. </p>
+			</span>
+			<span class="slide-up">
+				<p class="large">In an effort to avoid bombarding the user with personal questions upon initiating the chat, I spent some time figuring out how to get these crucial data points to the sales team in a way that didn't sacrifice the user experience.</p>
+			</span>
+			<span class="slide-up">
+				<p class="large">I pulled together initial flows and wireframes for the chat bearing in mind a primary question: <strong>How can we make an impersonal data gathering sequence feel smooth and unobtrusive?</strong></p>
+			</span>
+		</div>
+		<div class="clear"></div>
+	</section>
+
+	<img id="graph-one" src="../bundle/media/chat-graph-1.png">
+
+	<section class="half">
+		<div>
+			<h2 class="slide-up">Designing the Chat.</h2>
+			<h2 class="accent slide-up">What pieces make a great chat experience?</h2>
+		</div>
+		<div>
+			<p class="large slide-up">After figuring out a general idea of how the process and data would flow in a way that worked for everyone, the next question to ask was: <strong>What pieces of a chat are crucial to a great experience?</strong></p>
+		</div>
+		<div class="clear"></div>
+	</section>
+
+	<img id="graph-two" src="../bundle/media/chat-graph-2.png">
+	<img id="graph-three" src="../bundle/media/chat-graph-3.png">
+
+	<section class="half fade-in">
+		<img src="../bundle/media/chat-full.png">
+	</section>
+
+	<aside class="prototype">
+		<div>
+			<span>
+				<h2 class="slide-in">Bringing it All Together.</h2>
+				<h2 class="accent slide-in">Building a high-fidelity coded prototype.</h2>
+			</span>
+			<span class="slide-in">
+				<p class="large">After a number of design iterations, I coded up at a prototype that tied everything together and showed how the front-end of the chat would work. I held a number of sessions with key stakeholders to present and earn buy-in for our design that kept the user first.</p>
+			</span>
+			<a href="https://dchunkz.github.io/saleschat-prototype/" target="_blank" class="slide-in"><button>View Prototype</button></a>
+		</div>
+		<div>
+			<img id="code" src="../bundle/media/chat-code.png">
+		</div>
+		<div class="clear"></div>
+	</aside>
+
+	<section class="half">
+		<div>
+			<h2>Feedback & Impact.</h2>
+			<h2 class="accent">How was our solution received?</h2>
+		</div>
+		<div>
+			<p class="large slide-in">The elegance of our solution was received well throughout the organization, and soon other departments requested that we set up the chat service on their digital services. We were pleased with the outcome of a live chat application that solved a major problem in the digital experience and boosted sales leads.</p>
+		</div>
+		<div class="clear"></div>
+	</section>
+
+	<section class="half">
+		<div>
+			<h2>Project Learnings.</h2>
+			<h2 class="accent">My key takeaways.</h2>
+		</div>
+		<div>
+			<span class="slide-in">
+				<p class="overline">Persistence in shared understanding is key.</p>
+				<p class="large">Design thinking is valuable, but persistence is necessary because people tend to lose sight of what you are building and why. I realized that we needed frequent meetups with the team to reiterate the context of our product and cover any gaps in shared understanding.</p>
+			</span>
+			<span class="slide-in">
+				<p class="overline">Collaboration is innovation.</p>
+				<p class="large">Building personal relationships doesn't just make a project more enjoyable, it also creates collaborative relationships which nurtures an environment to discover the best solution together.</p>
+			</span>
+		</div>
+		<div class="clear"></div>
+	</section>
+
+	<footer>
+		<h2 class="slide-in">Want to connect some more?</h2>
+		<h2 class="accent slide-in">Hit me up!</h2>
+		<a href="mailto:danielschung2@gmail.com" class="slide-in"><button>Send me a message</button></a>
+	</footer>
+
+	<nav class="footer">
+		<a href="../bundle/media/danielschung-resume.pdf" target="_blank" class="left">Resume</a>
+		<a href="">GitHub</a>
+		<a href="https://www.behance.net/dchunkz" target="_blank">Behance</a>
+		<a href="https://www.linkedin.com/in/danielschung" target="_blank">LinkedIn</a>
+		<div class="clear"></div>
+	</nav>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="../bundle/js/main.js"></script>
+
+</body>
+</html>

@@ -1,100 +1,152 @@
-@import 'layout';
+nav {
+	padding-top: 1.875rem;
+	padding-bottom: 1.875rem;
+	@extend .side-padding;
 
-nav	{
-  box-sizing: border-box;
-  padding: 0.5rem 1.9rem;
-  position: fixed;
-  width: 100%;
-  z-index: 4;
+	.title {
+		display: inline-block;
+	}
 
-  div.close {
-    height: 1.25rem;
-    width: 1.25rem;
-    right: 1.5rem;
-    @include vertical-center;
+	div.links {
+		display: inline-block;
+		float: right;
+	}
 
-    div {
-      border-radius: 3px;
-      background-color: $color-black;
-      height: 0.15625rem;
-      width: 1.4375rem;
-      position: absolute;
-      top: 45%;
-      left: -0.10625rem;
-      right: 0;
-    }
-    div:nth-child(1) {
-      transform: rotate(45deg);
-    }
-    div:nth-child(2) {
-      transform: rotate(135deg);
-    }
-  }
+	a {
+		font-family: $font-body;
+		font-size: 0.75rem;
+		line-height: 0.88rem;
+		color: $black;
+		font-weight: 500;
+		letter-spacing: 0;
+		text-decoration: none;
+		padding-bottom: 0.5rem;
+		cursor: pointer;
+		@include hover;
+		margin: 0 0.9375rem;
+	}
+
+	a:hover {
+		color: $grey;
+	}
+
+	a.title:hover {
+		color: $grey;
+	}
+
+	a.active {
+		border-bottom: 1px solid $black;
+	}
+
+	a.active:hover {
+		border-bottom: 1px solid $grey;
+	}
 }
 
-@mixin p-name {
-  color: $color-off-white;
-  font-family: $gilroy-bold;
-  font-size: 1.125rem;
-  line-height: 120%;
-  letter-spacing: -1%;
+nav.footer {
+	background-color: $white;
+
+	a {
+		float: right;
+		margin: 0 0.9375rem;
+	}
+
+	a.left {
+		float: left;
+	}
 }
 
-@mixin p-job {
-  color: $color-off-white;
-  font-family: $gilroy-light;
-  font-size: 1.0625rem;
-  line-height: 120%;
-  letter-spacing: -1.5%;
+nav.mobile {
+	box-sizing: border-box;
+	background-color: $dark-blue;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	left: 100vw;
+	z-index: 100;
+
+	div.close {
+		height: 28px;
+		width: 100%;
+		position: relative;
+		display: block;
+
+		div.line {
+			background-color: $off-white;
+			border-radius: 100px;
+			height: 3px;
+			width: 28px;
+			position: absolute;
+			right: 0;
+			top: 50%;
+		}
+
+		div.line:nth-child(1) {
+			transform: rotate(45deg);
+		}
+
+		div.line:nth-child(2) {
+			transform: rotate(-45deg);
+		}
+	}
+
+	.title {
+		display: block;
+		float: none;
+		text-align: right;
+		color: $off-white;
+		margin: 7rem 0 0 0;
+	}
+
+	div.links {
+		display: block;
+		float: none;
+
+		a {
+			@extend h3;
+			margin: 1rem 0 0 0;
+			display: block;
+			text-align: right;
+			color: $off-white;
+		}
+
+		a.active {
+			border: none;
+			color: $blue !important;
+		}
+	}
 }
 
-p.name { @include p-name; }
-p.job { @include p-job; }
+nav.mobile + div#m-nav {
+	padding-top: 1.875rem;
+	padding-bottom: 1.875rem;
+	@extend .side-padding;
+	position: fixed;
+	z-index: 100;
+	right: 0;
+	mix-blend-mode: exclusion;
 
-@mixin nav-dark {
-  background-color: $color-p-dark;
-  p.name { color: $color-off-white; }
-  p.job { color: $color-off-white; }
-  div.close div { background-color: $color-off-white; }
-}
+	div.m-button {
+		height: 24px;
+		width: 24px;
+		position: relative;
 
-@mixin nav-light {
-  background-color: $color-off-white;
-  p.name { color: $color-p-dark; }
-  p.job { color: $color-p-dark; }
-  div.close div { background-color: $color-p-dark; }
-}
+		div.line {
+			background-color: $dark-blue;
+			border-radius: 100px;
+			height: 3px;
+			position: absolute;
+			right: 0;
+		}
 
-@mixin nav-split {
-  p.name { color: $color-off-white; }
-  p.job { color: $color-off-white; }
-  div.close div { background-color: $color-p-dark; }
-}
+		div.line:nth-child(1) {
+			bottom: 10px;
+			width: 70%;		
+		}
 
-// Home page
-body.home nav {
-  p.name { color: $color-p-dark; }
-  p.job { color: $color-p-dark; }
-}
-
-// Work page
-body.work nav {
-  height: 4rem;
-  div.close div { background-color: $color-off-white; }
-}
-
-// About page
-body.about nav {
-  @include nav-split;
-}
-body.about nav.light {
-  @include nav-light;
-}
-
-// Case pages
-body.case nav {
-  @include nav-dark;
-}
-body.case nav.light {
-  @include nav-light;
+		div.line:nth-child(2) {
+			bottom: 0;
+			width: 100%;
+		}
+	}
 }

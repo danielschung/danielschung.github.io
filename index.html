@@ -1,56 +1,107 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Daniel S Chung</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="./bundle/daniel.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="./bundle/all.css">
+	<title>Daniel S Chung</title>
 </head>
+<body>
+	<nav id="nav">
+		<div id="close" class="close">
+			<div class="line"></div>
+			<div class="line"></div>
+		</div>
+		<a class="title" href="./index.html">DANIEL S CHUNG</a>
+		<div class="links">
+			<a href="./index.html" class="active">Work</a>
+			<a href="./about.html">About</a>
+			<a href="./bundle/media/danielschung-resume.pdf" target="_blank">Resume</a>
+		</div>
+	</nav>
 
-<body class="home">
+	<div id="m-nav">
+		<div class="m-button">
+			<div class="line"></div>
+			<div class="line"></div>
+		</div>
+	</div>
 
-<div class="grain"></div>
-<div class="blue"></div>
-<div class="white"></div>
-<div class="blue-mobile"></div>
-<div class="white-mobile"></div>
+	<header>
+		<h1>Hey, I'm Daniel S Chung</h1>
+		<h1 class="accent">I’m a UXD/PM at Carle Health crafting Health Alliance digital products.</h1>
+	</header>
 
-<nav class="fade">
-  <p class="name">Daniel S Chung</p>
-  <p class="job">Digital Product</p>
-</nav>
+	<section class="recent-work">
+		<div class="top slide-up">
+			<h2 class="slide-up">Recent Work</h2>
+			<p class="slide-up">Check out what I’ve been up to.</p>
+		</div>
+		<div class="box one slide-up">
+			<a href="./case/state-of-illinois.html">
+				<div class="image"></div>
+			</a>
+			<div class="caption">
+				<a href="./case/state-of-illinois.html">
+					<h4>State of Illinois Site Rework</h4>
+				</a>
+				<p>Research, UXD, FE-D</p>
+			</div>
+		</div>
+		<div class="box two slide-up">
+			<a href="./case/virtual-assistant.html">
+				<div class="image"></div>
+			</a>
+			<div class="caption">
+				<a href="./case/virtual-assistant.html">
+					<h4>Health Alliance Virtual Assistant</h4>
+				</a>
+				<p>PM, UXD</p>
+			</div>
+		</div>
+		<div class="box three slide-up">
+			<div class="image"></div>
+			<div class="caption">
+				<h4>Social Media Campaign</h4>
+				<p>Social Ads, Creative Development</p>
+			</div>
+		</div>
+	</section>
 
-<section class="intro">
-  <div class="left">
-    <div class="container fade">
-      <h1>Hey, I'm Daniel</h1>
-      <p class="large">A multi-disciplinary marketing and product enthusiast who cares deeply about authoring multimedia that delivers impact and crafting digital products that scale.</p>
-      <div class="social">
-        <a href="mailto:danielschung2@gmail.com" class="social">Email</a>
-        <a href="https://www.linkedin.com/in/danielschung/" class="social" target="_blank">LinkedIn</a>
-        <a href="" class="social">Behance</a>
-        <a href="https://github.com/danielschung" class="social" target="_blank">GitHub</a>
-        <a href="./bundle/media/images/resume.pdf" target="_blank" class="social document">Resume</a>
-      </div>
-    </div>
-  </div>
+	<section class="other-design-work">
+		<div class="top">
+			<h2>Other Design Work</h2>
+			<p>Take a look at some of my other design work on <a href="">Behance</a></p>
+		</div>
 
-  <div class="right slideIn">
-    <div class="container links fade">
-      <a href="./work.html" class="flux work blue">View Work</a>
-      <a href="./about.html" class="flux about blue-white only-desktop">About Me</a>
-      <a href="./about.html" class="flux about blue-white only-tablet">About Me</a>
-      <a href="./about.html" class="flux about blue only-mobile">About Me</a>
-    </div>
-    <img class="fade" src="./bundle/media/images/home-main.svg">
-  </div>
-</section>
+		<div class="container">
+			<div class="snip one"></div>
+			<div class="snip two"></div>
+			<div class="snip three"></div>
+			<div class="snip four"></div>
+			<div class="snip five"></div>
+			<div class="snip six"></div>
+			<div class="snip seven"></div>
+			<div class="snip eight"></div>
+		</div>
+	</section>
 
-<div id="switch-nav"></div> <!-- anchor for waypoint object (change nav color) -->
+	<footer>
+		<h2 class="slide-in">Want to connect some more?</h2>
+		<h2 class="accent slide-in">Hit me up!</h2>
+		<a href="mailto:danielschung2@gmail.com" class="slide-in"><button>Send me a message</button></a>
+	</footer>
 
-<!-- js -->
-<script src="./bundle/js/jquery.min.js"></script>
-<script src="./bundle/js/daniel.js"></script>
-<script src="./bundle/js/noframework.waypoints.min.js"></script>
+	<nav class="footer">
+		<a href="./bundle/media/danielschung-resume.pdf" target="_blank" class="left">Resume</a>
+		<a href="">GitHub</a>
+		<a href="https://www.behance.net/dchunkz" target="_blank">Behance</a>
+		<a href="https://www.linkedin.com/in/danielschung" target="_blank">LinkedIn</a>
+		<div class="clear"></div>
+	</nav>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="./bundle/js/main.js"></script>
 
 </body>
 </html>

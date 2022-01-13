@@ -1,38 +1,69 @@
 body.about {
-	section.intro {
-		height: 100vh;
-		width: 100vw;
+	nav {
+		background-color: $dark-blue;
 
-		div.left {
-			background-color: $color-p-dark;
-				
-			h1, p {
-				color: $color-p-ultra;
-			}
-
-			img.about {
-				bottom: 20px;
-			    max-width: 250px;
-			    position: absolute;
-			    left: calc(#{$main-padding} - 20px);
-			}
+		a.title {
+			color: $off-white;
 		}
 
-		div.right {
-			background-color: $color-white;
+		a {
+			color: $off-white;
+		}
 
-			div.container {
-				padding-left: $main-padding;
-				height: auto;
-				width: 90%;
-			}
+		a.active {
+			border-bottom: 1px solid $off-white;
+		}
+	}
+
+	header {
+		background-color: $dark-blue;
+		position: relative;
+		background-image: url('./media/about.png');
+		background-size: 50% auto;
+		background-repeat: no-repeat;
+		background-position: bottom 0px right 4.5rem;
+
+		h1, p.large {
+			color: $white;
+			z-index: 1;
+		}
+
+		.accent {
+			color: $grey;
+			margin-bottom: 0.5rem;
+		}
+
+		p.large {
+			margin-top: 1rem;
+			max-width: 37.375rem;
+		}
+	}
+
+	section {
+		padding-top: 7.5625rem;
+		padding-bottom: 7.5625rem;
+		@extend .side-padding;
+
+		div:nth-child(1) {
+			float: left;
+			width: calc(50% - 6.25rem);
+		}
+
+		div:nth-child(2) {
+			float: right;
+			width: 50%;
+		}
+	}
+
+	nav.footer {
+		background-color: $white;
+
+		a {
+			color: $black;
+		}
+
+		a:hover {
+			color: $grey;
 		}
 	}
 }
-
-div#dark-nav {
-	position: absolute;
-	bottom: 0;
-}
-
-

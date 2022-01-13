@@ -1,104 +1,151 @@
-@media only screen and (max-width:1170px) { // smaller browser
-	body.home section.intro div.left {
-		top:0;
-		height: 50%;
-		width: 100vw;
-	}
-	body.home section.intro div.right {
-		bottom:0;
-		height: 50%;
-		width: 100vw;
-	}
-	body.work section div.wrapper {
-		padding: 7rem 1.875rem;
-	}
-	body.about section.intro div.left {
-		position: relative;
-		height: 50vh;
-		padding: $main-padding;
-
-		div.container {
-			position: relative;
-			padding-right: 0;
-		}
-		img.about {
-			bottom: $main-padding;
-			left: $main-padding;
-			margin-top: 3rem;
-			position: absolute;
-		}
-	}
-	body.about section.intro div.right {
-		position: relative;
-		height: 50vh;
-		padding: $main-padding;
-
-		div.container {
-			position: relative;
-			padding: 0;
-			width: 100%;
-		}
-	}
-	body.about nav div.close div {
-		background-color: $color-white;
+@media only screen and (max-width:1400px) { // medium browser
+	section.recent-work div.box div.image {
+		height: 21.875rem;
 	}
 }
 
-@media only screen and (max-width:769px) { // iPad
-	body.about section.intro div.left,
-	body.about section.intro div.right {
-		height: 100vh;
+@media only screen and (max-width:1320px) { // smaller browser
+	div.numbers p.large.left,
+	div.numbers p.large.right {
+		float: none;
+	}
+	body.case.virtual aside.prototype div:nth-child(2) {
+		width: 50%;
 	}
 }
 
-@media only screen and (max-width:650px) { // all mobile
-	html {
-	  font-size: 12px !important;
+@media only screen and (max-width:1080px) { // small browser
+	section.recent-work div.box div.image {
+		height: 18.75rem;
 	}
-	body.home section.intro div.right,
-	body.home section.intro div.left {
-		padding: $main-padding 1.875rem;
-	}
-	body.home section.intro div.left div.container {
-		padding-right: 1.875rem;
-		top: 52%;
-	}
-	body.home section.intro div.right div.container a.flux.work {
-		left: 1.875rem;
-	}
-	body.home section.intro div.right div.container a.flux.about {
-		right: 1.875rem;
-	}
-	body.case div.wrapper {
-		padding: 10rem 1.875rem 5rem 1.875rem;
+	body.case.soi section.personas div.heading {
+		left: 0;
 	}
 }
 
-@media only screen and (max-width:400px) { // xsmall mobile
-	html {
-		font-size: 10px !important;
-	}
-	body.about section.intro div.left {
-		height: 100vh;
-		padding-bottom: 7rem;
+@media only screen and (max-width:925px) { // iPad Pro
+	section.recent-work {
+		display: block;
 
-		img.about {
-			position: absolute;
-			width: 70%;
-			top: 2rem;
-		}
-		div.container {
-			position: relative;
-			margin-top: 12rem;
+		div.box div.image {
+			height: 25rem;
 		}
 	}
-	body.about section.intro div.right {
-		height: auto;
-		padding-bottom: 7rem;
+	body.case .half div:nth-child(1) {
+		margin-bottom: 2.5rem;
+	}
+	body.case .half div:nth-child(1),
+	body.case .half div:nth-child(2) {
+		float: none;
+		width: 100%;
+	}
+	body.case.soi aside.impact span.lower {
+		margin-top: 0;
+	}
+	body.about header {
+		background-size: 70% auto;
+		background-position: bottom center;
+		padding-bottom: 15.625rem;
+	}
+	section.other-design-work div.snip.one {
+		grid-column-start: 1;
+		grid-column-end: 2;
+		grid-row-start: 1;
+		grid-row-end: 2;
+	}
+	section.other-design-work div.snip.two {
+		grid-column-start: 2;
+		grid-column-end: 3;
+		grid-row-start: 1;
+		grid-row-end: 2;
+	}
+	section.other-design-work div.snip.three {
+		grid-column-start: 1;
+		grid-column-end: 2;
+		grid-row-start: 2;
+		grid-row-end: 3;
+	}
+	section.other-design-work div.snip.four {
+		grid-column-start: 2;
+		grid-column-end: 3;
+		grid-row-start: 2;
+		grid-row-end: 3;
+	}
+	section.other-design-work div.snip.five {
+		grid-column-start: 1;
+		grid-column-end: 2;
+		grid-row-start: 3;
+		grid-row-end: 4;
+	}
+	section.other-design-work div.snip.six {
+		grid-column-start: 2;
+		grid-column-end: 3;
+		grid-row-start: 3;
+		grid-row-end: 4;
+	}
+	section.other-design-work div.snip.seven {
+		grid-column-start: 1;
+		grid-column-end: 2;
+		grid-row-start: 4;
+		grid-row-end: 5;
+	}
+	section.other-design-work div.snip.eight {
+		grid-column-start: 2;
+		grid-column-end: 3;
+		grid-row-start: 4;
+		grid-row-end: 5;
+	}
+}
 
-		div.container {
-			// margin-top: 7rem;
-			transform: translateY(10%);
-		}
+@media only screen and (max-width:770px) { // iPad
+	body.case section.hero div.info {
+		margin-right: 0 !important;
+		padding: 2.5rem 4.5rem 0 4.5rem;
+	}
+	body.case.soi section.personas div.left,
+	body.case.soi section.personas div.right {
+		width: 100%;
+	}
+	body.case.soi aside.visual {
+		padding-left: 4.5rem;
+		padding-right: 4.5rem;
+	}
+	body.case.soi aside.impact span.lower {
+		margin-top: 0;
+	}
+	body.about section div:nth-child(1),
+	body.about section div:nth-child(2) {
+		float: none;
+		width: 100%;
+	}
+	body.about section div:nth-child(1) {
+		margin-bottom: 4.5rem;
+	}
+}
+
+@media only screen and (max-width:540px) { // all mobile
+	.side-padding {
+		padding-left: 3rem;
+		padding-right: 3rem;
+	}
+	section.recent-work div.box div.image {
+		height: 15rem;
+	}
+	body.about header {
+		background-size: 31.875rem auto;
+	}
+	footer {
+		background-size: 80% auto;
+		background-position: bottom center;
+		height: 500px;
+	}
+	// mobile nav class applied via JS
+}
+
+@media only screen and (max-width:420px) { // small mobile
+	nav.footer a,
+	nav.footer a.left {
+		float: none;
+		margin: 0 5% 0 0;
 	}
 }

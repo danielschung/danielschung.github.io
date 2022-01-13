@@ -1,17 +1,13 @@
 /*
 
-sass --watch bundle/sass/export.scss:bundle/daniel.css --style compressed
+sass --watch bundle/sass/export.scss:bundle/all.css --style compressed
 
 */
 
-@import 'colors';
-@import 'typography';
-@import 'layout';
-@import 'nav';
+@import 'global';
 @import 'home';
-@import 'work';
-@import 'case';
 @import 'about';
+@import 'case';
+@import 'nav';
 @import 'mobile';
-@import 'glitch';
-@import 'footer';
+
