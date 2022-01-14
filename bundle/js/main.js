@@ -33,6 +33,9 @@ function cycle(elem) {
 }
 
 $( document ).ready(function() {
+    slideUp.css('opacity','0');
+    slideIn.css('opacity','0');
+    fadeIn.css('opacity','0');
     cycle(slideUp);
     cycle(slideIn);
     cycle(fadeIn);
