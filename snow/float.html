@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Snow Float | Animated background with JavaScript, jQuery, and CSS</title>
+	<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="page.css">
+	<script type="text/javascript" src="page.js"></script>
+</head>
+
+<body>
+	<div class="snow-float"></div>
+	<div class="header">
+		<div class="title">Snow</div>
+		<div class="class">Float</div>
+	</div>
+	<button class="source">Source</button>
+	<button class="refresh" onclick="snowFloat()">Refresh</button>
+</body>
+
+<style>
+	.snow-float {
+		width: 100vw;
+		height: 100vh;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		padding: 0;
+		overflow-y: hidden;
+	}
+
+	.dot { 
+		background-color: #FFAFAF;  /* changes dot color */
+		border-radius: 100%;
+		position: fixed;
+		z-index: -1;
+	}
+
+	.snow-float .dot { animation: float 4s infinite ease-in-out; }
+	
+	@keyframes float {
+		0% {
+			margin-top: 0px;
+		} 50% {
+			margin-top: -20px;
+		} 100% {
+			margin-top: 0px;
+		}
+	}
+</style>
+
+<script>
+	const container = document.querySelector('.snow-float');
+	const dot = document.getElementsByClassName('dot');
+
+	function randomInt(min, max) {
+		const output = Math.floor(Math.random() * (max - min + 1) + min);
+		return output;
+	}
+
+	function snowFloat() {
+		const number = randomInt(20, 80);
+		for (let i = 0; i < number; i++) {
+			let div = document.createElement('div');
+			div.className = 'dot';
+			container.appendChild(div);
+			let size = `${randomInt(5, 10)}px`;        // sets dot size range in px
+			let xlocation = `${randomInt(0, 100)}%`;  // sets dot x start range in %
+			let ylocation = `${randomInt(0, 100)}%`; // sets dot y start range in %
+			dot[i].style.height = size;
+			dot[i].style.width = size;
+			dot[i].style.left = xlocation;
+			dot[i].style.top = ylocation;
+			dot[i].style.animationDelay = `${randomInt(-700, 700)}ms`;
+		}
+	}
+
+	snowFloat();
+</script>
+
+</html>

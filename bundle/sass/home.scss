@@ -68,7 +68,10 @@ section.recent-work {
 		grid-row-start: 3;
 		grid-row-end: 4;
 		div.image {
-			background-color: $light-grey;
+			background-image: url('./media/coming-soon.png');
+			background-color: $off-white;
+			@include thumbnail;
+			background-position: center;
 		}
 	}
 

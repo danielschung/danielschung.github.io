@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Snow Wander | Animated background with JavaScript, jQuery, and CSS</title>
+	<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="page.css">
+	<script type="text/javascript" src="page.js"></script>
+</head>
+
+<style>
+	.snow-wander {
+		width: 100vw;
+		height: 100vh;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		padding: 0;
+		overflow-y: hidden;
+	}
+
+	.dot { 
+		background-color: #FFAFAF;  /* changes dot color */
+		border-radius: 100%;
+		position: fixed;
+		z-index: -1;
+	}
+
+	.snow-wander .dot { 
+		animation: wander 10s infinite linear; 
+	}
+
+	@keyframes wander {
+		100% {
+			top: 100vh;
+		}
+	}
+</style>
+
+<body>
+	<div class="snow-wander"></div>
+	<div class="header">
+		<div class="title">Snow</div>
+		<div class="class">Floaters</div>
+	</div>
+	<button class="source">Source</button>
+	<button class="refresh" onclick="snowWander(snow)">Refresh</button>
+</body>
+
+<script>
+	const snow = document.querySelector('.snow-wander');
+	const dot = document.getElementsByClassName('dot');
+
+	function randomInt(min, max) {
+		const output = Math.floor(Math.random() * (max - min + 1) + min);
+		return output;
+	}
+
+	function snowWander(container) {
+		const number = randomInt(20, 70);
+		for (let i = 0; i < number; i++) {
+			let div = document.createElement('div');
+			div.className = 'dot';
+			container.appendChild(div);
+			let size = `${randomInt(5, 9)}px`;       // sets dot size range in px
+			let xlocation = `${randomInt(0, 100)}%`; // sets dot x start range in %
+			let ylocation = `${randomInt(0, 100)}%`; // sets dot y start range in %
+			dot[i].style.height = size;
+			dot[i].style.width = size;
+			dot[i].style.left = xlocation;
+			dot[i].style.top = ylocation;
+			dot[i].style.animationDelay = `${randomInt(-700, 0)}ms`;
+		}
+	}
+
+	snowWander(snow);
+</script>
+
+</html>
