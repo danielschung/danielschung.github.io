@@ -33,7 +33,7 @@
 	}
 
 	.dot { 
-		background-color: #FFAFAF;  /* changes dot color */
+		background-color: #D4EAF5;  /* changes dot color */
 		border-radius: 100%;
 		position: fixed;
 		z-index: -1;
@@ -56,7 +56,7 @@
 	}
 
 	function initial() {
-		const number = randomInt(40, 100);
+		const number = randomInt(100, 200);
 		create(number);
 	}
 
@@ -70,7 +70,7 @@
 			opacity: '1'
 		},{
 			queue: false,
-			duration: 500
+			duration: 400
 		}).animate({
 			top:`${screenbottom}px`,
 			left: offset,
