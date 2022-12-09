@@ -92,12 +92,14 @@ p.large {
 }
 
 .title {
-	font-family: $font-body;
-	font-size: 0.9375rem;
-	line-height: 1.9375rem;
+	font-family: $font-heading;
+	// font-size: 0.9375rem;
+	// line-height: 1.9375rem;
 	color: $black;
-	font-weight: 600;
-	letter-spacing: 0;
+	font-size: 1.5rem;
+	line-height: 2.5rem;
+	font-weight: 300;
+	margin: 0;
 	text-decoration: none;
 	cursor: pointer;
 	@include hover;
@@ -130,8 +132,8 @@ a:visited {
 }
 
 .side-padding {
-	padding-left: 4.5rem;
-	padding-right: 4.5rem;
+	padding-left: 2.37rem;
+	padding-right: 2.37rem;
 }
 
 div.clear {
@@ -210,8 +212,8 @@ button {
 
 footer {
 	background-color: #202233;
-	padding-top: 4rem;
-	padding-bottom: 4rem;
+	padding-top: 3rem;
+	padding-bottom: 3rem;
 	@extend .side-padding;
 	background-image: url('./media/footer.png');
 	background-size: 350px auto;

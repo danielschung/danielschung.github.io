@@ -13,13 +13,13 @@ header {
 }
 
 section.recent-work {
-	padding: 4rem 0 3rem 0;
+	padding: 2rem 0 1rem 0;
 	display: grid;
 	grid-gap: 0;
 
 	div.top {
 		padding-top: 0;
-		padding-bottom: 48px;
+		padding-bottom: 1.775rem;
 		@extend .side-padding;
 		grid-column-start: 1;
 		grid-column-end: 3;
@@ -29,8 +29,8 @@ section.recent-work {
 
 	div.box {
 		div.caption {
-			margin-top: 2.5rem;
-			margin-bottom: 3rem;
+			margin-top: 2.37rem;
+			margin-bottom: 2.5rem;
 			text-align: center;
 		}
 		div.image {
@@ -86,11 +86,11 @@ section.recent-work {
 	}
 }
 
-section.other-design-work {
-	padding-top: 4rem;
+section.tinkerbox {
+	padding-top: 2.37rem;
 	padding-bottom: 3rem;
 	@extend .side-padding;
-	display: none;
+	// display: none;
 
 	div.top {
 		padding-bottom: 3rem;
