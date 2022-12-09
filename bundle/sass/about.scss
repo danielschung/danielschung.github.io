@@ -10,6 +10,10 @@ body.about {
 			color: $off-white;
 		}
 
+		a:hover {
+			color: $blue;
+		}
+
 		a.active {
 			border-bottom: 1px solid $off-white;
 		}
@@ -23,7 +27,7 @@ body.about {
 		background-repeat: no-repeat;
 		background-position: bottom 0px right 4.5rem;
 
-		h1, p.large {
+		h2, p.large {
 			color: $white;
 			z-index: 1;
 		}
