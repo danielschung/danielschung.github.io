@@ -18,6 +18,12 @@
 </body>
 
 <style>
+	:root {
+		--snow-color: #D4EAF5; /* changes snow color */
+		--float-time: 4s; /* changes duration of snow float */
+		--float-distance: -20px; /* changes distance of snow float */
+	}
+
 	.snow-float {
 		width: 100vw;
 		height: 100vh;
@@ -31,19 +37,19 @@
 	}
 
 	.dot { 
-		background-color: #D4EAF5;  /* changes dot color */
+		background-color: var(--snow-color);
 		border-radius: 100%;
 		position: fixed;
 		z-index: -1;
 	}
 
-	.snow-float .dot { animation: float 4s infinite ease-in-out; }
+	.snow-float .dot { animation: float var(--float-time) infinite ease-in-out; }
 	
 	@keyframes float {
 		0% {
 			margin-top: 0px;
 		} 50% {
-			margin-top: -20px;
+			margin-top: var(--float-distance);
 		} 100% {
 			margin-top: 0px;
 		}
@@ -51,7 +57,6 @@
 </style>
 
 <script>
-	const container = document.querySelector('.snow-float');
 	const dot = document.getElementsByClassName('dot');
 
 	function randomInt(min, max) {
@@ -64,7 +69,7 @@
 		for (let i = 0; i < number; i++) {
 			let div = document.createElement('div');
 			div.className = 'dot';
-			container.appendChild(div);
+			document.querySelector('.snow-float').appendChild(div);
 			let size = `${randomInt(5, 10)}px`;        // sets dot size range in px
 			let xlocation = `${randomInt(0, 100)}%`;  // sets dot x start range in %
 			let ylocation = `${randomInt(0, 100)}%`; // sets dot y start range in %

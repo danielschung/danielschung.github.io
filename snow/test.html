@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Snow Fall | Animated background with JavaScript, jQuery, and CSS</title>
+	<title>Snow Test | Animated background with JavaScript, jQuery, and CSS</title>
 	<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500;600;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="page.css">
 	<script type="text/javascript" src="page.js"></script>
 </head>
 
 <body>
-	<div class="snow-fall"></div>
+	<div class="snow"></div>
 	<div class="header">
 		<div class="title">Snow</div>
 		<div class="class">Fall</div>
@@ -20,7 +20,13 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 <style>
-	.snow-fall {
+	:root {
+		--snow-color: #D4EAF5; /* changes snow color */
+		--random-duration: 0; /* placeholder for JS calculation */
+		--random-offset: 0; /* placeholder for JS calculation */
+	}
+
+	.snow {
 		width: 100vw;
 		height: 100vh;
 		position: absolute;
@@ -33,29 +39,33 @@
 	}
 
 	.dot { 
-		background-color: #D4EAF5;  /* changes dot color */
+		background-color: var(--snow-color);
 		border-radius: 100%;
-		position: fixed;
 		z-index: -1;
-		opacity:  0;
+/*		opacity:  0;*/
+		position: relative;
+		height: 70px;
+		width: 70px;
+		left: 50vw;
+		top: 10vh;
+		animation: fall var(--random-duration) linear infinite;
 	}
 
-	.snow-fall .dot {
-		/*animation:  fall infinite linear;*/
-		position: relative;
-	}
-	
-	/*@keyframes fall {
+	@keyframes fall {
 		0% {
-			top:  0;
+			top: inherit;
 		} 100% {
-			top: 100vh;
+			top: 100vh; 
+			left: var(--random);
 		}
-	}*/
+	}
+
+	.snow .dot {
+/*		position: relative;*/
+	}
 </style>
 
 <script>
-	const container = document.querySelector('.snow-fall');
 	const dot = document.getElementsByClassName('dot');
 	const $dots = $('.dot');
 
@@ -64,11 +74,22 @@
 		return output;
 	}
 
+	function initial() {
+		const number = randomInt(100, 200);
+		create(number);
+	}
+
+	function animate(i) {
+		let offset = randomInt(i.getBoundingClientRect().left - 50, i.getBoundingClientRect().left + 50) + 'px';
+		let duration = randomInt(15, 25);
+		i.style.setproperty('--random-duration', duration +'s');
+	}
+
 	function create(amt) {
 		for (let i = 0; i < amt; i++) {
 			let div = document.createElement('div');
 			div.className = 'dot';
-			container.appendChild(div);
+			document.querySelector('.snow ').appendChild(div);
 			let size = `${randomInt(5, 10)}px`;       // sets dot size range in px
 			let xlocation = `${randomInt(0, 100)}%`; // sets dot x start range in %
 			let ylocation = `${randomInt(0, 95)}%`; // sets dot y start range in %
@@ -80,43 +101,10 @@
 		}
 	}
 
-	function place(i) {
-		i.style.left = xlocation;
-		i.style.top = ylocation;
-	}
-
-	function animate(i) {
-		const height = window.innerHeight;
-		const position = i.getBoundingClientRect();	
-		let offset = randomInt(position.left - 50, position.left + 50) + 'px';
-		let duration = randomInt(15000, 25000);
-
-		$(i).animate({
-			opacity: '1'
-		},{
-			queue: false,
-			duration: 500
-		}).animate({
-			top:`${height}px`,
-			left: offset,
-		}, duration, 'linear');
-	}
-
-	function initial() {
-		const num = randomInt(40, 80);
-		for (let i = 0; i < num; i++) {
-			create(num[i]);
-			place(num[i]);
-			animate(num[i]);
-		}
-	}
-
-	function repeat() {
-		const num = randomInt(20, 40);
-		for (let i = 0; i < num; i++) {
-			create(num[i]);
-			animate(num[i]);
-		}
+	function repeat(i) {
+		i.style.opacity = '0';
+		i.style.top = '0';
+		animate(i);
 	}
 
 	initial();
