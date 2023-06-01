@@ -8,13 +8,15 @@
 </head>
 
 <body>
-	<div class="snow"></div>
+	<div class="snow">
+		<div class="dot"></div>
+	</div>
 	<div class="header">
 		<div class="title">Snow</div>
 		<div class="class">Fall</div>
 	</div>
 	<button class="source">Source</button>
-	<button class="refresh" onclick="snowFall(snow)">Refresh</button>
+	<button class="refresh" onclick="create()">Refresh</button>
 </body>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -42,13 +44,11 @@
 		background-color: var(--snow-color);
 		border-radius: 100%;
 		z-index: -1;
-/*		opacity:  0;*/
 		position: relative;
-		height: 70px;
-		width: 70px;
-		left: 50vw;
-		top: 10vh;
-		animation: fall var(--random-duration) linear infinite;
+		animation-name: fall;
+		animation-duration: var(--random-duration);
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
 	}
 
 	@keyframes fall {
@@ -56,40 +56,27 @@
 			top: inherit;
 		} 100% {
 			top: 100vh; 
-			left: var(--random);
+			left: var(--random-offset);
 		}
 	}
 
-	.snow .dot {
-/*		position: relative;*/
-	}
 </style>
 
 <script>
+	const number = randomInt(100,200); // controls range number of dots
+	const duration = randomInt(15000, 25000); // controls range of snowfall timing
 	const dot = document.getElementsByClassName('dot');
-	const $dots = $('.dot');
-
+	
 	function randomInt(min, max) {
 		const output = Math.floor(Math.random() * (max - min + 1) + min);
 		return output;
 	}
 
-	function initial() {
-		const number = randomInt(100, 200);
-		create(number);
-	}
-
-	function animate(i) {
-		let offset = randomInt(i.getBoundingClientRect().left - 50, i.getBoundingClientRect().left + 50) + 'px';
-		let duration = randomInt(15, 25);
-		i.style.setproperty('--random-duration', duration +'s');
-	}
-
-	function create(amt) {
-		for (let i = 0; i < amt; i++) {
+	function create() {
+		for (let i = 0; i < number; i++) {
 			let div = document.createElement('div');
-			div.className = 'dot';
-			document.querySelector('.snow ').appendChild(div);
+			div.classList.add('dot');
+			document.querySelector('.snow').appendChild(div);
 			let size = `${randomInt(5, 10)}px`;       // sets dot size range in px
 			let xlocation = `${randomInt(0, 100)}%`; // sets dot x start range in %
 			let ylocation = `${randomInt(0, 95)}%`; // sets dot y start range in %
@@ -101,13 +88,28 @@
 		}
 	}
 
-	function repeat(i) {
-		i.style.opacity = '0';
-		i.style.top = '0';
-		animate(i);
+	function animate(i) {
+		let offset = randomInt(i.getBoundingClientRect().left - 50, i.getBoundingClientRect().left + 50) + 'px';
+
+		i.style.setProperty('--random-duration', duration);
+		i.style.setProperty('--random-offset', offset);
+		// $(i).animate({
+		// 	opacity:'1'
+		// },{
+		// 	queue: false,
+		// 	duration: 400
+		// });
 	}
 
-	initial();
+	function repeat(i) {
+		console.log(i);
+	}
+
+	create();
+
+
+
+
 </script>
 
 </html>
